@@ -7,6 +7,7 @@ export const profile = {
   email: "m.mubeenejaz@gmail.com",
   phone: "+92 342 4500018",
   linkedin: "https://www.linkedin.com/in/mubeenejaz",
+  github: "https://github.com/mmubeenejaz",
   summary:
     "For 4+ years at Reporteq, I've turned ambiguous business problems into shipped software for 50+ clients across healthcare, real estate, automotive, and AI-driven platforms, running discovery workshops, authoring BRDs and BPMN process models, and owning delivery from requirements through UAT, while maintaining a 95% client satisfaction rate. I think the next generation of technical business analysts and product owners won't stop at defining what to build; they'll be able to build a working version of it themselves. That's the space I work in: requirements and stakeholder management on one side, hands-on AI application development on the other.",
 };

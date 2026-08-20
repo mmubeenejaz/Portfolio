@@ -2,7 +2,7 @@ import { skillGroups } from "@/lib/data";
 
 export default function Skills() {
   return (
-    <section id="skills" className="border-t border-border px-6 py-24">
+    <section id="skills" className="scroll-mt-28 border-t border-border px-6 py-24">
       <div className="mx-auto max-w-5xl">
         <div className="mb-10 flex items-baseline gap-3">
           <span className="font-mono text-sm text-accent">02</span>

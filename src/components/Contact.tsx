@@ -5,7 +5,7 @@ import LinkedinIcon from "@/components/icons/LinkedinIcon";
 
 export default function Contact() {
   return (
-    <section id="contact" className="border-t border-border px-6 py-24">
+    <section id="contact" className="scroll-mt-28 border-t border-border px-6 py-24">
       <div className="mx-auto max-w-5xl">
         <div className="mb-10 flex items-baseline gap-3">
           <span className="font-mono text-sm text-accent">05</span>

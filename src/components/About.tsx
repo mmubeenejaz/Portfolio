@@ -2,7 +2,7 @@ import { profile } from "@/lib/data";
 
 export default function About() {
   return (
-    <section id="about" className="border-t border-border px-6 py-24">
+    <section id="about" className="scroll-mt-28 border-t border-border px-6 py-24">
       <div className="mx-auto max-w-5xl">
         <div className="mb-10 flex items-baseline gap-3">
           <span className="font-mono text-sm text-accent">01</span>
