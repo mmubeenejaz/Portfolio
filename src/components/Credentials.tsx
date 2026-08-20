@@ -6,7 +6,7 @@ export default function Credentials() {
     <section id="credentials" className="border-t border-border px-6 py-24">
       <div className="mx-auto max-w-5xl">
         <div className="mb-10 flex items-baseline gap-3">
-          <span className="font-mono text-sm text-accent">05</span>
+          <span className="font-mono text-sm text-accent">04</span>
           <h2 className="text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
             Certifications &amp; Education
           </h2>

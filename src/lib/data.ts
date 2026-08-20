@@ -2,13 +2,13 @@ export const profile = {
   name: "Mubeen Ejaz",
   role: "Business Analyst · Product Owner · AI Engineer",
   tagline:
-    "I turn ambiguous business problems into shipped software — and increasingly, I build the solution myself.",
+    "I turn ambiguous business problems into shipped software, and increasingly, I build the solution myself.",
   location: "Lahore, Punjab, Pakistan",
   email: "m.mubeenejaz@gmail.com",
   phone: "+92 342 4500018",
   linkedin: "https://www.linkedin.com/in/mubeenejaz",
   summary:
-    "For 4+ years at Reporteq, I've turned ambiguous business problems into shipped software for 50+ clients across healthcare, real estate, automotive, and AI-driven platforms — running discovery workshops, authoring BRDs and BPMN process models, and owning delivery from requirements through UAT, while maintaining a 95% client satisfaction rate. I think the next generation of technical business analysts and product owners won't stop at defining what to build — they'll be able to build a working version of it themselves. That's the space I work in: requirements and stakeholder management on one side, hands-on AI application development on the other.",
+    "For 4+ years at Reporteq, I've turned ambiguous business problems into shipped software for 50+ clients across healthcare, real estate, automotive, and AI-driven platforms, running discovery workshops, authoring BRDs and BPMN process models, and owning delivery from requirements through UAT, while maintaining a 95% client satisfaction rate. I think the next generation of technical business analysts and product owners won't stop at defining what to build; they'll be able to build a working version of it themselves. That's the space I work in: requirements and stakeholder management on one side, hands-on AI application development on the other.",
 };
 
 export const skillGroups = [
@@ -80,28 +80,11 @@ export const skillGroups = [
   },
 ];
 
-export const projects = [
-  {
-    name: "Stratum AI",
-    period: "2025",
-    description:
-      "A full-stack KPI tracking and AI-recommendation platform, scoped and shipped as an MVP using Claude Code — spanning authentication, KPI setup, data upload, chat, and AI-driven recommendations.",
-    stack: ["Next.js", "Prisma", "SQLite", "NextAuth.js", "shadcn/ui", "Claude Code"],
-  },
-  {
-    name: "Grants Management System — Rebuild",
-    period: "2025",
-    description:
-      "Modernized a legacy grants management system by feeding the existing codebase into Claude Code to redesign and refactor core functionality, then tested and deployed a more polished, production-ready version.",
-    stack: ["Claude Code", "Legacy Modernization", "QA & UAT"],
-  },
-];
-
 export const experience = [
   {
     role: "Business Analyst & Product Owner",
     company: "Reporteq (Pvt.) Ltd",
-    period: "Dec 2022 — Present",
+    period: "Dec 2022 - Present",
     highlights: [
       "Delivered 50+ client projects across healthcare, real estate, automotive, and AI-driven platforms, maintaining a 95% client satisfaction rate.",
       "Authored BRDs, BPMN process models, user stories, and acceptance criteria; ran stakeholder workshops across 50+ client accounts.",
@@ -114,7 +97,7 @@ export const experience = [
   {
     role: "Business Development Executive",
     company: "InvoZone (Pvt.) Ltd",
-    period: "Jun 2022 — Nov 2022",
+    period: "Jun 2022 - Nov 2022",
     highlights: [
       "Built and managed a CRM pipeline for prospective Web3, blockchain, and metaverse clients, translating technical concepts into clear business communication.",
     ],
@@ -122,13 +105,13 @@ export const experience = [
   {
     role: "Business Development Associate",
     company: "Programmers Force",
-    period: "Oct 2021 — Dec 2021",
+    period: "Oct 2021 - Dec 2021",
     highlights: [],
   },
   {
     role: "Sales and Marketing Intern",
     company: "Honda Atlas Cars (Pakistan) Limited",
-    period: "Oct 2020 — Dec 2020",
+    period: "Oct 2020 - Dec 2020",
     highlights: [],
   },
 ];
@@ -150,6 +133,5 @@ export const nav = [
   { label: "About", href: "#about" },
   { label: "Skills", href: "#skills" },
   { label: "Experience", href: "#experience" },
-  { label: "Projects", href: "#projects" },
   { label: "Contact", href: "#contact" },
 ];

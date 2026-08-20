@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Mubeen Ejaz — Business Analyst, Product Owner & AI Engineer",
+  title: "Mubeen Ejaz | Business Analyst, Product Owner & AI Engineer",
   description:
-    "Portfolio of Mubeen Ejaz — Business Analyst and Product Owner building AI-powered applications end-to-end with Claude Code and modern AI tooling.",
+    "Portfolio of Mubeen Ejaz, Business Analyst and Product Owner building AI-powered applications end-to-end with Claude Code and modern AI tooling.",
   keywords: [
     "Mubeen Ejaz",
     "Business Analyst",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Mubeen Ejaz" }],
   openGraph: {
-    title: "Mubeen Ejaz — Business Analyst, Product Owner & AI Engineer",
+    title: "Mubeen Ejaz | Business Analyst, Product Owner & AI Engineer",
     description:
       "Business Analyst and Product Owner building AI-powered applications end-to-end.",
     type: "website",

@@ -57,10 +57,10 @@ export default function Hero() {
 
           <div className="mt-9 flex flex-wrap items-center gap-4">
             <a
-              href="#projects"
+              href="#experience"
               className="inline-flex h-12 items-center gap-2 rounded-full bg-accent-strong px-6 text-sm font-medium text-white transition-colors hover:bg-accent-strong-hover"
             >
-              View Projects
+              View Experience
               <ArrowRight size={16} aria-hidden="true" />
             </a>
             <a
