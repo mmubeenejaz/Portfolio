@@ -3,7 +3,6 @@ export const profile = {
   role: "Business Analyst · Product Owner · AI Engineer",
   tagline:
     "I turn ambiguous business problems into shipped software, and increasingly, I build the solution myself.",
-  location: "Lahore, Punjab, Pakistan",
   email: "m.mubeenejaz@gmail.com",
   phone: "+92 342 4500018",
   linkedin: "https://www.linkedin.com/in/mubeenejaz",

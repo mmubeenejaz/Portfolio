@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import Image from "next/image";
-import { ArrowRight, Download, MapPin } from "lucide-react";
+import { ArrowRight, Download } from "lucide-react";
 import { profile } from "@/lib/data";
 
 function findAvatar() {
@@ -49,11 +49,6 @@ export default function Hero() {
           <p className="mt-5 max-w-xl text-balance text-base leading-7 text-muted sm:text-lg">
             {profile.tagline}
           </p>
-
-          <div className="mt-4 flex items-center gap-1.5 text-sm text-muted-2">
-            <MapPin size={15} aria-hidden="true" />
-            {profile.location}
-          </div>
 
           <div className="mt-9 flex flex-wrap items-center gap-4">
             <a
