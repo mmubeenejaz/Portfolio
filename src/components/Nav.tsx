@@ -47,12 +47,8 @@ export default function Nav() {
       >
         <a
           href="#top"
-          className="flex items-center gap-2 text-sm font-semibold tracking-tight whitespace-nowrap text-foreground"
+          className="flex items-center text-sm font-semibold tracking-tight whitespace-nowrap text-foreground"
         >
-          <span
-            className="h-1.5 w-1.5 shrink-0 rounded-full bg-accent"
-            aria-hidden="true"
-          />
           Mubeen Ejaz
         </a>
 
@@ -72,8 +68,7 @@ export default function Nav() {
               {activeHref === item.href && (
                 <span
                   aria-hidden="true"
-                  className="absolute inset-x-0 -bottom-0.5 mx-auto h-1 w-1 rounded-full bg-accent"
-                  style={{ left: "50%", transform: "translateX(-50%)" }}
+                  className="absolute -bottom-1 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-accent"
                 />
               )}
             </a>

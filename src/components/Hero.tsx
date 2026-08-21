@@ -46,8 +46,12 @@ export default function Hero() {
             {profile.role}
           </p>
 
-          <p className="mt-5 max-w-xl text-balance text-base leading-7 text-muted sm:text-lg">
+          <p className="mt-5 max-w-xl text-balance text-lg leading-snug font-medium text-foreground sm:text-xl">
             {profile.tagline}
+          </p>
+
+          <p className="mt-2 max-w-xl text-balance text-sm leading-6 text-muted sm:text-base">
+            {profile.subTagline}
           </p>
 
           <div className="mt-9 flex flex-wrap items-center gap-4">

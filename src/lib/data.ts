@@ -1,8 +1,9 @@
 export const profile = {
   name: "Mubeen Ejaz",
   role: "Business Analyst · Product Owner · AI Engineer",
-  tagline:
-    "I turn ambiguous business problems into shipped software, and increasingly, I build the solution myself.",
+  tagline: "I used to write the specs. Now I build and ship the product.",
+  subTagline:
+    "I stopped handing specs to developers. I started building the product.",
   email: "m.mubeenejaz@gmail.com",
   phone: "+92 342 4500018",
   linkedin: "https://www.linkedin.com/in/mubeenejaz",
