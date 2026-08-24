@@ -21,7 +21,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Mubeen Ejaz on LinkedIn"
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-border text-muted transition-colors hover:border-accent hover:text-accent"
+              className="btn-lift flex h-11 w-11 items-center justify-center rounded-full border border-border text-muted hover:border-accent hover:text-accent"
             >
               <LinkedinIcon size={16} />
             </a>
@@ -30,7 +30,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Mubeen Ejaz on GitHub"
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-border text-muted transition-colors hover:border-accent hover:text-accent"
+              className="btn-lift flex h-11 w-11 items-center justify-center rounded-full border border-border text-muted hover:border-accent hover:text-accent"
             >
               <GithubIcon size={16} />
             </a>

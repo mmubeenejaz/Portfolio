@@ -1,4 +1,5 @@
 import SectionHeading from "@/components/SectionHeading";
+import Reveal from "@/components/Reveal";
 
 type FeatureItem = {
   title: string;
@@ -22,49 +23,49 @@ export default function FeatureGrid({
   columns?: 2 | 3;
 }) {
   return (
-    <section id={id} className="scroll-mt-28 border-t border-border px-6 py-24">
+    <section id={id} className="scroll-mt-28 border-t border-border px-6 py-20">
       <div className="mx-auto max-w-5xl">
-        <SectionHeading number={number} title={heading} />
-
-        {subheading && (
-          <p className="mb-10 max-w-2xl text-balance text-muted">
-            {subheading}
-          </p>
-        )}
+        <Reveal>
+          <SectionHeading number={number} title={heading} />
+          {subheading && (
+            <p className="mb-10 max-w-2xl text-balance text-muted">
+              {subheading}
+            </p>
+          )}
+        </Reveal>
 
         <div
           className={`grid gap-6 ${
             columns === 3 ? "sm:grid-cols-2 lg:grid-cols-3" : "sm:grid-cols-2"
           }`}
         >
-          {items.map((item) => (
-            <div
-              key={item.title}
-              className="rounded-2xl border border-border bg-surface p-6"
-            >
-              <h3 className="text-base font-medium text-foreground">
-                {item.title}
-              </h3>
+          {items.map((item, index) => (
+            <Reveal key={item.title} delay={index * 80}>
+              <div className="card-hover h-full rounded-2xl border border-border bg-surface p-6">
+                <h3 className="text-base font-medium text-foreground">
+                  {item.title}
+                </h3>
 
-              {item.description && (
-                <p className="mt-2 text-sm leading-6 text-muted">
-                  {item.description}
-                </p>
-              )}
+                {item.description && (
+                  <p className="mt-2 text-sm leading-6 text-muted">
+                    {item.description}
+                  </p>
+                )}
 
-              {item.tags && (
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {item.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-full border border-border bg-background px-2.5 py-1 text-xs text-muted"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              )}
-            </div>
+                {item.tags && (
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {item.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="rounded-full border border-border bg-background px-2.5 py-1 text-xs text-muted"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </Reveal>
           ))}
         </div>
       </div>

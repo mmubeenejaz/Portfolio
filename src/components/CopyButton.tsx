@@ -21,7 +21,7 @@ export default function CopyButton({ value }: { value: string }) {
       type="button"
       onClick={handleCopy}
       aria-label={copied ? "Email copied" : "Copy email address"}
-      className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-border text-muted transition-colors hover:border-accent hover:text-accent"
+      className="btn-lift inline-flex h-11 w-11 items-center justify-center rounded-full border border-border text-muted hover:border-accent hover:text-accent"
     >
       {copied ? (
         <Check size={16} aria-hidden="true" />
