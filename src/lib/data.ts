@@ -176,7 +176,7 @@ export const activeBuilds = [
 ];
 
 export const about = {
-  eyebrow: "Product Owner → AI Product Engineer",
+  eyebrow: "Product Owner to AI Product Engineer",
   statement: "I spent years defining software for developers. Now I build and ship it myself.",
   principles: [
     { title: "Product", description: "Understand the problem." },
@@ -201,8 +201,8 @@ export const finalCTA = {
 };
 
 export const nav = [
+  { label: "About", href: "#about" },
   { label: "Work", href: "#work" },
   { label: "Process", href: "#process" },
-  { label: "About", href: "#about" },
   { label: "Contact", href: "#contact" },
 ];
