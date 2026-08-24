@@ -43,24 +43,30 @@ export default function Hero() {
           </h1>
 
           <p className="mt-4 text-balance text-lg font-medium text-accent sm:text-xl">
-            {profile.role}
+            {profile.title}
           </p>
 
-          <p className="mt-5 max-w-xl text-balance text-lg leading-snug font-medium text-foreground sm:text-xl">
+          <p className="mt-5 max-w-xl text-balance text-base leading-7 text-muted sm:text-lg">
             {profile.tagline}
           </p>
 
-          <p className="mt-2 max-w-xl text-balance text-sm leading-6 text-muted sm:text-base">
-            {profile.subTagline}
+          <p className="mt-4 max-w-xl text-balance text-sm font-semibold tracking-wide text-foreground sm:text-base">
+            {profile.disciplines}
           </p>
 
           <div className="mt-9 flex flex-wrap items-center gap-4">
             <a
-              href="#experience"
+              href="#work"
               className="inline-flex h-12 items-center gap-2 rounded-full bg-accent-strong px-6 text-sm font-medium text-white transition-colors hover:bg-accent-strong-hover"
             >
-              View Experience
+              View Projects
               <ArrowRight size={16} aria-hidden="true" />
+            </a>
+            <a
+              href="#experience"
+              className="inline-flex h-12 items-center gap-2 rounded-full border border-border px-6 text-sm font-medium text-foreground transition-colors hover:border-accent hover:text-accent"
+            >
+              View Experience
             </a>
             <a
               href="/Mubeen-Ejaz-Resume.docx"

@@ -1,49 +1,60 @@
+import SectionHeading from "@/components/SectionHeading";
 import { experience } from "@/lib/data";
 
 export default function Experience() {
   return (
     <section id="experience" className="scroll-mt-28 border-t border-border px-6 py-24">
       <div className="mx-auto max-w-5xl">
-        <div className="mb-10 flex items-baseline gap-3">
-          <span className="font-mono text-sm text-accent">03</span>
-          <h2 className="text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
-            Experience
-          </h2>
+        <SectionHeading number="06" title="Professional Experience" />
+
+        <div className="mb-10">
+          <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+            <h3 className="text-lg font-semibold text-foreground sm:text-xl">
+              {experience.role}
+            </h3>
+            <span className="text-muted">· {experience.company}</span>
+          </div>
+          <p className="mt-1 font-mono text-xs text-muted-2">{experience.period}</p>
+          <p className="mt-4 text-muted">{experience.summary}</p>
         </div>
 
-        <div className="space-y-10">
-          {experience.map((job) => (
-            <div
-              key={`${job.company}-${job.period}`}
-              className="grid gap-2 border-b border-border pb-10 last:border-none last:pb-0 sm:grid-cols-[220px_1fr] sm:gap-8"
-            >
-              <div>
-                <p className="font-mono text-xs text-muted-2">{job.period}</p>
-              </div>
+        <div className="space-y-8">
+          {experience.highlights.map((item, index) => (
+            <div key={item.title} className="border-l-2 border-accent/30 pl-4">
+              <h4 className="flex items-baseline gap-2 text-base font-medium text-foreground">
+                <span className="font-mono text-xs text-accent">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                {item.title}
+              </h4>
 
-              <div>
-                <h3 className="text-base font-medium text-foreground">
-                  {job.role}
-                  <span className="text-muted"> · {job.company}</span>
-                </h3>
+              <p className="mt-2 text-sm leading-6 text-muted">{item.description}</p>
 
-                {job.highlights.length > 0 && (
-                  <ul className="mt-4 space-y-2.5">
-                    {job.highlights.map((point) => (
-                      <li
-                        key={point}
-                        className="flex gap-3 text-sm leading-6 text-muted"
+              {"tags" in item && item.tags && item.tags.length > 0 && (
+                <div className="mt-3">
+                  {"createdLabel" in item && item.createdLabel && (
+                    <p className="mb-2 text-xs text-muted-2">{item.createdLabel}</p>
+                  )}
+                  <div className="flex flex-wrap gap-2">
+                    {item.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="rounded-full border border-border bg-background px-2.5 py-1 text-xs text-muted"
                       >
-                        <span
-                          aria-hidden="true"
-                          className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-accent"
-                        />
-                        {point}
-                      </li>
+                        {tag}
+                      </span>
                     ))}
-                  </ul>
-                )}
-              </div>
+                  </div>
+                </div>
+              )}
+
+              {"flow" in item && item.flow && (
+                <div className="mt-3 overflow-x-auto rounded-lg border border-border bg-background px-3 py-2">
+                  <p className="whitespace-nowrap font-mono text-xs text-muted">
+                    {item.flow}
+                  </p>
+                </div>
+              )}
             </div>
           ))}
         </div>
