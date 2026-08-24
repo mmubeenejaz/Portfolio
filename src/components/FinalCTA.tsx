@@ -21,7 +21,7 @@ export default function FinalCTA() {
   return (
     <section id="contact" className="scroll-mt-28 border-t border-border px-6 py-20">
       <div className="mx-auto max-w-5xl">
-        <SectionHeading number="06" title="Contact" />
+        <SectionHeading title="Contact" />
 
         <div className="card-hover rounded-2xl border border-border bg-surface p-8 sm:p-12">
           <h3 className="max-w-lg text-balance text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">

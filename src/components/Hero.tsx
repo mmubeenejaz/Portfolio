@@ -26,8 +26,6 @@ export default function Hero() {
       id="top"
       className="bg-grid relative flex min-h-[100dvh] items-center overflow-hidden pt-16"
     >
-      <div className="aurora pointer-events-none absolute inset-x-0 top-0 h-[700px]" />
-
       <div className="relative mx-auto grid w-full max-w-5xl gap-12 px-6 py-20 md:grid-cols-[1.1fr_0.9fr] md:items-center">
         <div>
           <h1

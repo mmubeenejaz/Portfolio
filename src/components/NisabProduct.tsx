@@ -9,7 +9,7 @@ export default function NisabProduct() {
     <section id="work" className="scroll-mt-28 border-t border-border px-6 py-20">
       <div className="mx-auto max-w-5xl">
         <Reveal>
-          <SectionHeading number="01" title={featuredProject.eyebrow} />
+          <SectionHeading title={featuredProject.eyebrow} />
         </Reveal>
 
         <Reveal delay={60}>
@@ -61,15 +61,9 @@ export default function NisabProduct() {
                 {featuredProject.primaryCtaLabel}
                 <ArrowUpRight size={16} aria-hidden="true" />
               </a>
-              <a
-                href={featuredProject.secondaryCta.href}
-                className="btn-lift inline-flex h-11 items-center gap-2 rounded-full border border-border px-5 text-sm font-medium hover:border-accent hover:text-accent"
-              >
-                {featuredProject.secondaryCta.label}
-              </a>
             </div>
 
-            <div className="mt-8 overflow-x-auto">
+            <div className="scrollbar-hide mt-8 overflow-x-auto">
               <div className="flex w-max items-center gap-2 whitespace-nowrap text-xs text-muted-2">
                 {featuredProject.pipeline.map((stage, index) => (
                   <span key={stage} className="flex items-center gap-2">

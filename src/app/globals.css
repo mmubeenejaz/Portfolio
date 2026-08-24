@@ -8,10 +8,10 @@
   --foreground: #14151a;
   --muted: #55565f;
   --muted-2: #686972;
-  --accent: #4f46e5;
-  --accent-strong: #4338ca;
-  --accent-strong-hover: #3730a3;
-  --accent-soft: rgba(79, 70, 229, 0.08);
+  --accent: #9a4a0c;
+  --accent-strong: #8a3a09;
+  --accent-strong-hover: #7d3408;
+  --accent-soft: rgba(154, 74, 12, 0.08);
 }
 
 @theme inline {
@@ -75,14 +75,6 @@ body {
   mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 40%, transparent 100%);
 }
 
-.aurora {
-  background:
-    radial-gradient(600px circle at 15% 20%, rgba(79, 70, 229, 0.16), transparent 60%),
-    radial-gradient(500px circle at 85% 10%, rgba(236, 72, 153, 0.12), transparent 60%),
-    radial-gradient(650px circle at 60% 40%, rgba(34, 211, 238, 0.14), transparent 60%);
-  filter: blur(40px);
-}
-
 .glass {
   background: linear-gradient(
     180deg,
@@ -118,7 +110,7 @@ body {
 .card-hover:hover {
   transform: translateY(-3px);
   box-shadow: 0 16px 32px rgba(20, 21, 26, 0.08);
-  border-color: rgba(79, 70, 229, 0.3);
+  border-color: rgba(154, 74, 12, 0.3);
 }
 
 .btn-lift {
@@ -139,49 +131,40 @@ body {
 }
 
 /*
-  Floor opacity is 0.7 (not 0) so that if an animation never starts or
-  never completes for any reason (throttled background tab, a browser
-  quirk, a script that fails to run), content is still clearly legible
-  (~6.5:1 contrast) rather than permanently invisible. Above-the-fold
-  and scroll-revealed content must never depend on an animation
-  finishing in order to be readable.
+  Entrance/reveal motion is transform-only — opacity is always 1. An
+  earlier version dimmed opacity during entrance, and on some real
+  browsers/conditions the animation never finished, leaving hero content
+  visibly washed out. Content must never depend on an animation completing
+  in order to be at full, normal contrast.
 */
 
 @keyframes fadeInUp {
   from {
-    opacity: 0.7;
     transform: translateY(14px);
   }
   to {
-    opacity: 1;
     transform: translateY(0);
   }
 }
 
 .animate-fade-up {
-  opacity: 1;
   animation: fadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .reveal {
-  opacity: 0.7;
   transform: translateY(16px);
-  transition:
-    opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
-    transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .reveal-visible {
-  opacity: 1;
   transform: translateY(0);
 }
 
 /*
   Collapsed state is height:0fr + overflow:hidden — never display:none or
-  opacity:0 — so accordion content (project rows, architecture node detail,
-  product decisions) is always in the DOM and instantly reachable the
-  moment it's expanded. The global prefers-reduced-motion rule above
-  already zeroes the transition duration.
+  opacity:0 — so accordion content (project rows, stage detail) is always
+  in the DOM and instantly reachable the moment it's expanded. The global
+  prefers-reduced-motion rule above already zeroes the transition duration.
 */
 .accordion-panel {
   display: grid;
@@ -195,4 +178,13 @@ body {
 
 .accordion-panel-open {
   grid-template-rows: 1fr;
+}
+
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }

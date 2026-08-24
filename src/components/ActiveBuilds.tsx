@@ -11,7 +11,7 @@ export default function ActiveBuilds() {
   return (
     <section id="building" className="scroll-mt-28 border-t border-border px-6 py-20">
       <div className="mx-auto max-w-5xl">
-        <SectionHeading number="03" title="Currently building" />
+        <SectionHeading title="Currently building" />
 
         <div>
           {activeBuilds.map((build, index) => {

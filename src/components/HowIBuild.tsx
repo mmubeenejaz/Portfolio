@@ -38,15 +38,15 @@ export default function HowIBuild() {
   return (
     <section id="process" className="scroll-mt-28 border-t border-border px-6 py-20">
       <div className="mx-auto max-w-5xl">
-        <SectionHeading number="02" title={howIBuild.heading} />
+        <SectionHeading title={howIBuild.heading} />
 
-        <div className="flex flex-col sm:flex-row sm:items-start">
+        <div className="grid gap-4 sm:grid-cols-5">
           {howIBuild.steps.map((step, index) => {
             const isOpen = openNumber === step.number;
             const isActive = activeNumber === step.number;
 
             return (
-              <div key={step.number} className="flex flex-col sm:contents">
+              <div key={step.number} className="flex flex-col">
                 {index > 0 && (
                   <span
                     aria-hidden="true"
@@ -55,50 +55,40 @@ export default function HowIBuild() {
                     ↓
                   </span>
                 )}
-                {index > 0 && (
+                <button
+                  type="button"
+                  ref={(el) => {
+                    stepRefs.current[step.number] = el;
+                  }}
+                  aria-expanded={isOpen}
+                  onClick={() => setOpenNumber(isOpen ? null : step.number)}
+                  className={`card-hover flex h-full flex-col rounded-2xl border bg-surface p-5 text-left ${
+                    isActive ? "border-accent/40" : "border-border"
+                  }`}
+                >
                   <span
-                    aria-hidden="true"
-                    className="hidden items-center justify-center px-1 text-muted-2 sm:flex sm:self-center"
-                  >
-                    →
-                  </span>
-                )}
-                <div className="flex-1">
-                  <button
-                    type="button"
-                    ref={(el) => {
-                      stepRefs.current[step.number] = el;
-                    }}
-                    aria-expanded={isOpen}
-                    onClick={() => setOpenNumber(isOpen ? null : step.number)}
-                    className={`card-hover block w-full rounded-2xl border bg-surface p-5 text-left ${
-                      isActive ? "border-accent/40" : "border-border"
+                    className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full border font-mono text-xs text-accent ${
+                      isActive ? "border-accent bg-accent-soft" : "border-border"
                     }`}
                   >
-                    <span
-                      className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full border font-mono text-xs text-accent ${
-                        isActive ? "border-accent bg-accent-soft" : "border-border"
-                      }`}
-                    >
-                      {step.number}
-                    </span>
-                    <h3 className="mt-3 text-base font-semibold text-foreground">
-                      {step.title}
-                    </h3>
-                    <p className="mt-1 text-sm leading-6 text-muted">
-                      {step.description}
-                    </p>
-                    <div
-                      className={`accordion-panel ${isOpen ? "accordion-panel-open" : ""}`}
-                    >
-                      <div>
-                        <p className="mt-3 text-sm leading-6 text-muted-2">
-                          {step.detail}
-                        </p>
-                      </div>
+                    {step.number}
+                  </span>
+                  <h3 className="mt-3 text-base font-semibold text-foreground">
+                    {step.title}
+                  </h3>
+                  <p className="mt-1 text-sm leading-6 text-muted">
+                    {step.description}
+                  </p>
+                  <div
+                    className={`accordion-panel ${isOpen ? "accordion-panel-open" : ""}`}
+                  >
+                    <div>
+                      <p className="mt-3 text-sm leading-6 text-muted-2">
+                        {step.detail}
+                      </p>
                     </div>
-                  </button>
-                </div>
+                  </div>
+                </button>
               </div>
             );
           })}

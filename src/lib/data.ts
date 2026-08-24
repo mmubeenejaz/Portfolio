@@ -31,7 +31,7 @@ export const featuredProject = {
     "Personal finances are usually scattered across spreadsheets, bank records, and notes, making it hard to see where money is going, how wealth is growing, or what's outstanding.",
   builtHeading: "What I Built",
   built:
-    "A single platform built around one ledger every balance derives from — income and expenses, budgeting, a multi-asset investment portfolio (stocks, funds, gold, property, business), possessions and liabilities, net worth over time, and a manual Zakat tracker.",
+    "A single platform built around one ledger every balance derives from: income and expenses, budgeting, a multi-asset investment portfolio (stocks, funds, gold, property, business), possessions and liabilities, net worth over time, and a manual Zakat tracker.",
   roleHeading: "My Role",
   role: [
     "Product discovery",
@@ -85,10 +85,9 @@ export const featuredProject = {
     "Deployment",
   ],
   aiHeading: "How AI Was Used",
-  ai: "AI accelerated implementation through Claude Code-assisted development. Nisab has no runtime AI feature today — deterministic financial correctness (one ledger, exact decimal math, tenant isolation) was the priority before layering on anything probabilistic.",
+  ai: "AI accelerated implementation through Claude Code-assisted development. Nisab has no runtime AI feature today; deterministic financial correctness (one ledger, exact decimal math, tenant isolation) was the priority before layering on anything probabilistic.",
   liveUrl: "https://nisab-personal-finance-tracker.vercel.app/login",
   primaryCtaLabel: "Explore Nisab",
-  secondaryCta: { label: "Open the hood", href: "#architecture" },
 };
 
 export const howIBuild = {
@@ -99,7 +98,7 @@ export const howIBuild = {
       title: "Problem",
       description: "Understand what actually needs solving.",
       detail:
-        "Talk to the people closest to the problem, not just the request. Most feature ideas are symptoms — the real problem is usually one level deeper.",
+        "Talk to the people closest to the problem, not just the request. Most feature ideas are symptoms; the real problem is usually one level deeper.",
     },
     {
       number: "02",
@@ -113,7 +112,7 @@ export const howIBuild = {
       title: "AI",
       description: "Identify where AI creates real leverage.",
       detail:
-        "AI earns its place where reasoning is probabilistic and being occasionally wrong is cheap. Everywhere else — money, auth, tenant boundaries — deterministic logic wins.",
+        "AI earns its place where reasoning is probabilistic and being occasionally wrong is cheap. Everywhere else (money, auth, tenant boundaries), deterministic logic wins.",
     },
     {
       number: "04",
@@ -175,65 +174,6 @@ export const activeBuilds = [
     flow: null as string[] | null,
   },
 ];
-
-export const architecture = {
-  heading: "Open the hood",
-  intro: "Don't just look at the product. See how it works.",
-  subheading: "Nisab's architecture — the real thing, not a diagram for show.",
-  nodes: [
-    {
-      id: "user",
-      label: "User",
-      description: "Signs in through Supabase Auth. Every request carries their identity from here on.",
-    },
-    {
-      id: "web",
-      label: "Web Application",
-      description: "Next.js 16, App Router, TypeScript. Server-rendered, with Server Actions doing the writes.",
-    },
-    {
-      id: "services",
-      label: "Server Actions",
-      description:
-        "One domain service per concern — finance, investments, possessions, liabilities, budgets, Zakat, net worth, reports. Finance is the only writer of ledger rows.",
-    },
-    {
-      id: "database",
-      label: "Database",
-      description:
-        "PostgreSQL on Supabase via Prisma 7. Money and quantities are Decimal, never float — realized and unrealized gains are never mixed.",
-    },
-    {
-      id: "isolation",
-      label: "Tenant Isolation",
-      description:
-        "Two independent layers: an app-level gate every query goes through, plus Postgres Row-Level Security underneath it. One layer failing doesn't leak another user's data.",
-    },
-  ],
-  decisionsHeading: "Product decisions",
-  decisions: [
-    {
-      question: "Why Postgres + Supabase instead of SQLite?",
-      answer:
-        "Vercel's serverless functions have no persistent writable filesystem — SQLite doesn't survive that. Real multi-user auth and exact Decimal support for financial correctness both needed a real database from day one.",
-    },
-    {
-      question: "Why two independent tenant-isolation layers instead of one?",
-      answer:
-        "A bug in application code alone shouldn't be able to leak one user's financial data to another. App-level scoping and Postgres Row-Level Security are enforced independently, so one failing doesn't expose the other.",
-    },
-    {
-      question: "Where does AI actually fit today?",
-      answer:
-        "It accelerated the build — Claude Code-assisted development end to end. It isn't a runtime feature yet. Deterministic financial correctness came first; a probabilistic feature only gets added where it earns its cost.",
-    },
-    {
-      question: "Why is Nazim on SQLite while Nisab is on Postgres?",
-      answer:
-        "A deliberate demo-phase trade-off, not an oversight. Row-Level Security and a database-level ledger trigger are deferred until real money moves through it; app-level tenant scoping and a ledger balance assertion cover the gap until then.",
-    },
-  ],
-};
 
 export const about = {
   eyebrow: "Product Owner → AI Product Engineer",

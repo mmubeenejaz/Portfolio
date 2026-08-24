@@ -8,7 +8,7 @@ export default function About() {
     <section id="about" className="scroll-mt-28 border-t border-border px-6 py-20">
       <div className="mx-auto max-w-5xl">
         <Reveal>
-          <SectionHeading number="05" title={about.eyebrow} />
+          <SectionHeading title={about.eyebrow} />
 
           <p className="max-w-2xl text-xl font-medium leading-8 text-foreground sm:text-2xl">
             {about.statement}
@@ -32,7 +32,7 @@ export default function About() {
 
           <p className="mt-8 text-sm text-muted-2">
             {about.credential.role} · {about.credential.company} ·{" "}
-            {about.credential.period} — {about.credential.note}
+            {about.credential.period} · {about.credential.note}
           </p>
 
           <a

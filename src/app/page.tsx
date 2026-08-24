@@ -1,10 +1,9 @@
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
+import About from "@/components/About";
 import NisabProduct from "@/components/NisabProduct";
 import HowIBuild from "@/components/HowIBuild";
 import ActiveBuilds from "@/components/ActiveBuilds";
-import OpenTheHood from "@/components/OpenTheHood";
-import About from "@/components/About";
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
 import WhatsAppFab from "@/components/WhatsAppFab";
@@ -17,11 +16,10 @@ export default function Home() {
       <Nav />
       <main>
         <Hero />
+        <About />
         <NisabProduct />
         <HowIBuild />
         <ActiveBuilds />
-        <OpenTheHood />
-        <About />
         <FinalCTA />
       </main>
       <Footer />
