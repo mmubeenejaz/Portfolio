@@ -55,7 +55,7 @@ export default function Hero() {
           >
             <a
               href={hero.primaryCta.href}
-              className="btn-lift inline-flex h-12 items-center gap-2 rounded-full bg-accent-strong px-6 text-sm font-medium text-white hover:bg-accent-strong-hover"
+              className="btn-lift inline-flex h-12 items-center gap-2 rounded-full bg-accent-strong px-6 text-sm font-medium text-background hover:bg-accent-strong-hover"
             >
               {hero.primaryCta.label}
               <ArrowRight size={16} aria-hidden="true" />

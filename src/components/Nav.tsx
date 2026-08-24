@@ -55,7 +55,7 @@ export default function Nav() {
         </a>
 
         <span
-          className="mx-1 hidden h-5 w-px bg-black/10 md:block"
+          className="mx-1 hidden h-5 w-px bg-white/10 md:block"
           aria-hidden="true"
         />
 
@@ -107,8 +107,8 @@ export default function Nav() {
               onClick={() => setOpen(false)}
               className={`rounded-xl px-4 py-3 text-base transition-colors ${
                 activeHref === item.href
-                  ? "bg-black/5 text-foreground"
-                  : "text-muted hover:bg-black/5 hover:text-foreground"
+                  ? "bg-white/5 text-foreground"
+                  : "text-muted hover:bg-white/5 hover:text-foreground"
               }`}
             >
               {item.label}

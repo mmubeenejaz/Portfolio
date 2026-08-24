@@ -39,7 +39,7 @@ export default function FinalCTA() {
             />
             <button
               type="submit"
-              className="btn-lift mt-4 inline-flex h-12 items-center gap-2 rounded-full bg-accent-strong px-6 text-sm font-medium text-white hover:bg-accent-strong-hover"
+              className="btn-lift mt-4 inline-flex h-12 items-center gap-2 rounded-full bg-accent-strong px-6 text-sm font-medium text-background hover:bg-accent-strong-hover"
             >
               {finalCTA.submitLabel}
               <Send size={16} aria-hidden="true" />

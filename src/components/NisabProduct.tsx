@@ -56,7 +56,7 @@ export default function NisabProduct() {
                 href={featuredProject.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-lift inline-flex h-11 items-center gap-2 rounded-full bg-accent-strong px-5 text-sm font-medium text-white hover:bg-accent-strong-hover"
+                className="btn-lift inline-flex h-11 items-center gap-2 rounded-full bg-accent-strong px-5 text-sm font-medium text-background hover:bg-accent-strong-hover"
               >
                 {featuredProject.primaryCtaLabel}
                 <ArrowUpRight size={16} aria-hidden="true" />
