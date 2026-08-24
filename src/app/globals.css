@@ -175,3 +175,24 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
+
+/*
+  Collapsed state is height:0fr + overflow:hidden — never display:none or
+  opacity:0 — so accordion content (project rows, architecture node detail,
+  product decisions) is always in the DOM and instantly reachable the
+  moment it's expanded. The global prefers-reduced-motion rule above
+  already zeroes the transition duration.
+*/
+.accordion-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.accordion-panel > div {
+  overflow: hidden;
+}
+
+.accordion-panel-open {
+  grid-template-rows: 1fr;
+}

@@ -1,38 +1,73 @@
 import { ArrowUpRight } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
 import Reveal from "@/components/Reveal";
+import NisabPreview from "@/components/NisabPreview";
 import { featuredProject } from "@/lib/data";
 
-export default function FeaturedProject() {
+export default function NisabProduct() {
   return (
     <section id="work" className="scroll-mt-28 border-t border-border px-6 py-20">
       <div className="mx-auto max-w-5xl">
         <Reveal>
-          <SectionHeading number="02" title={featuredProject.eyebrow} />
+          <SectionHeading number="01" title={featuredProject.eyebrow} />
         </Reveal>
 
-        <Reveal>
+        <Reveal delay={60}>
           <div className="card-hover rounded-3xl border border-border bg-surface p-6 sm:p-10">
             <h3 className="text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
               {featuredProject.name}
             </h3>
-            <p className="mt-1 text-base text-accent">
-              {featuredProject.subtitle}
-            </p>
+            <p className="mt-1 text-base text-accent">{featuredProject.subtitle}</p>
+
+            <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
+              <span className="flex items-baseline gap-1.5">
+                <span className="text-xs uppercase tracking-wide text-muted-2">Role</span>
+                <span className="font-medium text-foreground">{featuredProject.meta.role}</span>
+              </span>
+              <span className="text-border" aria-hidden="true">
+                ·
+              </span>
+              <span className="flex items-baseline gap-1.5">
+                <span className="text-xs uppercase tracking-wide text-muted-2">Type</span>
+                <span className="font-medium text-foreground">{featuredProject.meta.type}</span>
+              </span>
+              <span className="text-border" aria-hidden="true">
+                ·
+              </span>
+              <span className="flex items-center gap-1.5">
+                <span className="text-xs uppercase tracking-wide text-muted-2">Status</span>
+                <span className="flex items-center gap-1.5 font-medium text-accent">
+                  <span className="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden="true" />
+                  {featuredProject.meta.status}
+                </span>
+              </span>
+            </div>
 
             <p className="mt-5 max-w-3xl text-lg leading-7 text-muted">
               {featuredProject.description}
             </p>
 
-            <a
-              href={featuredProject.liveUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-lift mt-6 inline-flex h-11 items-center gap-2 rounded-full bg-accent-strong px-5 text-sm font-medium text-white hover:bg-accent-strong-hover"
-            >
-              Live Demo
-              <ArrowUpRight size={16} aria-hidden="true" />
-            </a>
+            <div className="mt-8">
+              <NisabPreview />
+            </div>
+
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a
+                href={featuredProject.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-lift inline-flex h-11 items-center gap-2 rounded-full bg-accent-strong px-5 text-sm font-medium text-white hover:bg-accent-strong-hover"
+              >
+                {featuredProject.primaryCtaLabel}
+                <ArrowUpRight size={16} aria-hidden="true" />
+              </a>
+              <a
+                href={featuredProject.secondaryCta.href}
+                className="btn-lift inline-flex h-11 items-center gap-2 rounded-full border border-border px-5 text-sm font-medium hover:border-accent hover:text-accent"
+              >
+                {featuredProject.secondaryCta.label}
+              </a>
+            </div>
 
             <div className="mt-8 overflow-x-auto">
               <div className="flex w-max items-center gap-2 whitespace-nowrap text-xs text-muted-2">
@@ -54,17 +89,13 @@ export default function FeaturedProject() {
                 <h4 className="text-sm font-medium text-foreground">
                   {featuredProject.problemHeading}
                 </h4>
-                <p className="mt-2 text-sm leading-6 text-muted">
-                  {featuredProject.problem}
-                </p>
+                <p className="mt-2 text-sm leading-6 text-muted">{featuredProject.problem}</p>
               </div>
               <div>
                 <h4 className="text-sm font-medium text-foreground">
                   {featuredProject.builtHeading}
                 </h4>
-                <p className="mt-2 text-sm leading-6 text-muted">
-                  {featuredProject.built}
-                </p>
+                <p className="mt-2 text-sm leading-6 text-muted">{featuredProject.built}</p>
               </div>
             </div>
 
@@ -118,12 +149,8 @@ export default function FeaturedProject() {
             </div>
 
             <div className="mt-8 border-t border-border pt-6">
-              <h4 className="text-sm font-medium text-foreground">
-                {featuredProject.aiHeading}
-              </h4>
-              <p className="mt-2 text-sm leading-6 text-muted">
-                {featuredProject.ai}
-              </p>
+              <h4 className="text-sm font-medium text-foreground">{featuredProject.aiHeading}</h4>
+              <p className="mt-2 text-sm leading-6 text-muted">{featuredProject.ai}</p>
             </div>
           </div>
         </Reveal>

@@ -1,8 +1,8 @@
 import fs from "node:fs";
 import path from "node:path";
 import Image from "next/image";
-import { ArrowRight, Download } from "lucide-react";
-import { profile } from "@/lib/data";
+import { ArrowRight } from "lucide-react";
+import { profile, hero } from "@/lib/data";
 
 function findAvatar() {
   const candidates = ["profile.jpg", "profile.jpeg", "profile.png", "profile.webp"];
@@ -30,70 +30,67 @@ export default function Hero() {
 
       <div className="relative mx-auto grid w-full max-w-5xl gap-12 px-6 py-20 md:grid-cols-[1.1fr_0.9fr] md:items-center">
         <div>
-          <div
-            className="glass mb-6 inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-xs text-muted animate-fade-up"
-            style={{ animationDelay: "0ms" }}
-          >
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
-            </span>
-            {profile.availability}
-          </div>
-
           <h1
             className="text-balance text-4xl font-semibold tracking-tight text-foreground sm:text-5xl md:text-6xl animate-fade-up"
-            style={{ animationDelay: "40ms" }}
+            style={{ animationDelay: "0ms" }}
           >
-            {profile.name}
+            {hero.headline}
           </h1>
 
           <p
             className="mt-4 text-balance text-lg font-medium text-accent sm:text-xl animate-fade-up"
-            style={{ animationDelay: "80ms" }}
+            style={{ animationDelay: "40ms" }}
           >
-            {profile.title}
+            {hero.positioning}
           </p>
 
           <p
             className="mt-5 max-w-xl text-balance text-base leading-7 text-muted sm:text-lg animate-fade-up"
-            style={{ animationDelay: "120ms" }}
+            style={{ animationDelay: "80ms" }}
           >
-            {profile.tagline}
-          </p>
-
-          <p
-            className="mt-4 max-w-xl text-balance text-sm font-semibold tracking-wide text-foreground sm:text-base animate-fade-up"
-            style={{ animationDelay: "150ms" }}
-          >
-            {profile.disciplines}
+            {hero.statement}
           </p>
 
           <div
             className="mt-9 flex flex-wrap items-center gap-4 animate-fade-up"
-            style={{ animationDelay: "190ms" }}
+            style={{ animationDelay: "120ms" }}
           >
             <a
-              href="#work"
+              href={hero.primaryCta.href}
               className="btn-lift inline-flex h-12 items-center gap-2 rounded-full bg-accent-strong px-6 text-sm font-medium text-white hover:bg-accent-strong-hover"
             >
-              View Projects
+              {hero.primaryCta.label}
               <ArrowRight size={16} aria-hidden="true" />
             </a>
             <a
-              href="#experience"
+              href={hero.secondaryCta.href}
               className="btn-lift inline-flex h-12 items-center gap-2 rounded-full border border-border px-6 text-sm font-medium text-foreground hover:border-accent hover:text-accent"
             >
-              View Experience
+              {hero.secondaryCta.label}
             </a>
-            <a
-              href="/Mubeen-Ejaz-Resume.docx"
-              download
-              className="btn-lift inline-flex h-12 items-center gap-2 rounded-full border border-border px-6 text-sm font-medium text-foreground hover:border-accent hover:text-accent"
-            >
-              <Download size={16} aria-hidden="true" />
-              Resume
-            </a>
+          </div>
+
+          <div
+            className="mt-8 flex flex-col items-start gap-2 animate-fade-up sm:flex-row sm:items-center sm:gap-3"
+            style={{ animationDelay: "160ms" }}
+          >
+            {hero.workflow.map((step, index) => (
+              <div key={step} className="flex items-center gap-2 sm:contents">
+                {index > 0 && (
+                  <span aria-hidden="true" className="text-muted-2 sm:hidden">
+                    ↓
+                  </span>
+                )}
+                {index > 0 && (
+                  <span aria-hidden="true" className="hidden text-muted-2 sm:inline">
+                    →
+                  </span>
+                )}
+                <span className="rounded-full border border-border bg-background px-2.5 py-1 text-xs text-muted">
+                  {step}
+                </span>
+              </div>
+            ))}
           </div>
         </div>
 

@@ -1,4 +1,4 @@
-import { profile } from "@/lib/data";
+import { profile, hero } from "@/lib/data";
 import LinkedinIcon from "@/components/icons/LinkedinIcon";
 import GithubIcon from "@/components/icons/GithubIcon";
 
@@ -11,8 +11,7 @@ export default function Footer() {
             <p className="text-sm font-semibold text-foreground">
               {profile.name}
             </p>
-            <p className="mt-1 text-xs text-muted">{profile.title}</p>
-            <p className="mt-1 text-xs text-muted-2">{profile.disciplines}</p>
+            <p className="mt-1 text-xs text-muted">{hero.positioning}</p>
           </div>
 
           <div className="flex items-center gap-3">

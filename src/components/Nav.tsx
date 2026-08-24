@@ -2,12 +2,14 @@
 
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import { nav } from "@/lib/data";
+import { nav, profile } from "@/lib/data";
+import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeHref, setActiveHref] = useState<string | null>(null);
+  const whatsappUrl = `https://wa.me/${profile.whatsappNumber}?text=${encodeURIComponent(profile.whatsappMessage)}`;
 
   useEffect(() => {
     const sections = nav
@@ -74,6 +76,16 @@ export default function Nav() {
             </a>
           ))}
         </nav>
+
+        <a
+          href={whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Chat on WhatsApp"
+          className="flex h-9 w-9 items-center justify-center rounded-full text-muted transition-colors hover:text-accent"
+        >
+          <WhatsAppIcon size={18} />
+        </a>
 
         <button
           type="button"

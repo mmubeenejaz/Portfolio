@@ -1,31 +1,31 @@
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
-import Services from "@/components/Services";
-import FeaturedProject from "@/components/FeaturedProject";
-import Process from "@/components/Process";
-import Experience from "@/components/Experience";
-import AITech from "@/components/AITech";
-import AboutMe from "@/components/AboutMe";
-import Credentials from "@/components/Credentials";
-import Contact from "@/components/Contact";
+import NisabProduct from "@/components/NisabProduct";
+import HowIBuild from "@/components/HowIBuild";
+import ActiveBuilds from "@/components/ActiveBuilds";
+import OpenTheHood from "@/components/OpenTheHood";
+import About from "@/components/About";
+import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
+import WhatsAppFab from "@/components/WhatsAppFab";
+import DevEasterEgg from "@/components/DevEasterEgg";
 
 export default function Home() {
   return (
     <>
+      <DevEasterEgg />
       <Nav />
       <main>
         <Hero />
-        <Services />
-        <FeaturedProject />
-        <Process />
-        <Experience />
-        <AITech />
-        <AboutMe />
-        <Credentials />
-        <Contact />
+        <NisabProduct />
+        <HowIBuild />
+        <ActiveBuilds />
+        <OpenTheHood />
+        <About />
+        <FinalCTA />
       </main>
       <Footer />
+      <WhatsAppFab />
     </>
   );
 }
