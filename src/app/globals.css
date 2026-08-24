@@ -138,10 +138,19 @@ body {
   transform: translateY(0);
 }
 
+/*
+  Floor opacity is 0.7 (not 0) so that if an animation never starts or
+  never completes for any reason (throttled background tab, a browser
+  quirk, a script that fails to run), content is still clearly legible
+  (~6.5:1 contrast) rather than permanently invisible. Above-the-fold
+  and scroll-revealed content must never depend on an animation
+  finishing in order to be readable.
+*/
+
 @keyframes fadeInUp {
   from {
-    opacity: 0;
-    transform: translateY(18px);
+    opacity: 0.7;
+    transform: translateY(14px);
   }
   to {
     opacity: 1;
@@ -150,15 +159,16 @@ body {
 }
 
 .animate-fade-up {
-  animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+  opacity: 1;
+  animation: fadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .reveal {
-  opacity: 0;
-  transform: translateY(20px);
+  opacity: 0.7;
+  transform: translateY(16px);
   transition:
-    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .reveal-visible {

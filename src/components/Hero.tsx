@@ -43,35 +43,35 @@ export default function Hero() {
 
           <h1
             className="text-balance text-4xl font-semibold tracking-tight text-foreground sm:text-5xl md:text-6xl animate-fade-up"
-            style={{ animationDelay: "80ms" }}
+            style={{ animationDelay: "40ms" }}
           >
             {profile.name}
           </h1>
 
           <p
             className="mt-4 text-balance text-lg font-medium text-accent sm:text-xl animate-fade-up"
-            style={{ animationDelay: "160ms" }}
+            style={{ animationDelay: "80ms" }}
           >
             {profile.title}
           </p>
 
           <p
             className="mt-5 max-w-xl text-balance text-base leading-7 text-muted sm:text-lg animate-fade-up"
-            style={{ animationDelay: "240ms" }}
+            style={{ animationDelay: "120ms" }}
           >
             {profile.tagline}
           </p>
 
           <p
             className="mt-4 max-w-xl text-balance text-sm font-semibold tracking-wide text-foreground sm:text-base animate-fade-up"
-            style={{ animationDelay: "300ms" }}
+            style={{ animationDelay: "150ms" }}
           >
             {profile.disciplines}
           </p>
 
           <div
             className="mt-9 flex flex-wrap items-center gap-4 animate-fade-up"
-            style={{ animationDelay: "380ms" }}
+            style={{ animationDelay: "190ms" }}
           >
             <a
               href="#work"
@@ -99,7 +99,7 @@ export default function Hero() {
 
         <div
           className="flex justify-center md:justify-end animate-fade-up"
-          style={{ animationDelay: "160ms" }}
+          style={{ animationDelay: "80ms" }}
         >
           <div className="relative h-56 w-56 shrink-0 sm:h-64 sm:w-64 md:h-72 md:w-72">
             <div className="absolute -inset-3 rounded-full bg-gradient-to-br from-accent/30 via-accent/5 to-transparent blur-xl" />
