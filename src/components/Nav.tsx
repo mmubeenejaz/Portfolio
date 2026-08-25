@@ -43,19 +43,19 @@ export default function Nav() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 flex justify-center px-4 pt-4 sm:pt-6">
       <div
-        className={`glass flex h-14 items-center gap-1 rounded-full pl-4 pr-2 transition-[background,box-shadow] duration-300 sm:gap-2 sm:pl-5 ${
+        className={`glass flex h-16 items-center gap-2 rounded-full pl-5 pr-3 transition-[background,box-shadow] duration-300 sm:gap-3 sm:pl-6 ${
           scrolled ? "glass-scrolled" : ""
         }`}
       >
         <a
           href="#top"
-          className="flex items-center text-sm font-semibold tracking-tight whitespace-nowrap text-foreground"
+          className="flex items-center text-base font-semibold tracking-tight whitespace-nowrap text-foreground"
         >
           Mubeen Ejaz
         </a>
 
         <span
-          className="mx-1 hidden h-5 w-px bg-white/10 md:block"
+          className="mx-2 hidden h-6 w-px bg-white/10 md:block"
           aria-hidden="true"
         />
 
@@ -64,7 +64,7 @@ export default function Nav() {
             <a
               key={item.href}
               href={item.href}
-              className="relative rounded-full px-3 py-2 text-sm text-muted transition-colors hover:text-foreground"
+              className="relative rounded-full px-4 py-2.5 text-sm text-muted transition-colors hover:text-foreground"
             >
               {item.label}
               {activeHref === item.href && (
@@ -82,9 +82,9 @@ export default function Nav() {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Chat on WhatsApp"
-          className="flex h-9 w-9 items-center justify-center rounded-full text-muted transition-colors hover:text-accent"
+          className="flex h-11 w-11 items-center justify-center rounded-full text-muted transition-colors hover:text-accent"
         >
-          <WhatsAppIcon size={18} />
+          <WhatsAppIcon size={20} />
         </a>
 
         <button
@@ -92,14 +92,14 @@ export default function Nav() {
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
-          className="flex h-10 w-10 items-center justify-center rounded-full text-foreground md:hidden"
+          className="flex h-11 w-11 items-center justify-center rounded-full text-foreground md:hidden"
         >
-          {open ? <X size={20} /> : <Menu size={20} />}
+          {open ? <X size={22} /> : <Menu size={22} />}
         </button>
       </div>
 
       {open && (
-        <nav className="glass absolute top-[calc(3.5rem+1.5rem)] flex w-[calc(100%-2rem)] max-w-xs flex-col gap-1 rounded-3xl p-3 md:hidden">
+        <nav className="glass absolute top-[calc(4rem+1.5rem)] flex w-[calc(100%-2rem)] max-w-xs flex-col gap-1 rounded-3xl p-3 md:hidden">
           {nav.map((item) => (
             <a
               key={item.href}

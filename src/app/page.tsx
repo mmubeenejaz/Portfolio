@@ -5,6 +5,7 @@ import NisabProduct from "@/components/NisabProduct";
 import HowIBuild from "@/components/HowIBuild";
 import ActiveBuilds from "@/components/ActiveBuilds";
 import FinalCTA from "@/components/FinalCTA";
+import Footer from "@/components/Footer";
 import WhatsAppFab from "@/components/WhatsAppFab";
 import DevEasterEgg from "@/components/DevEasterEgg";
 
@@ -21,6 +22,7 @@ export default function Home() {
         <ActiveBuilds />
         <FinalCTA />
       </main>
+      <Footer />
       <WhatsAppFab />
     </>
   );
