@@ -1,10 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { Mail, Send } from "lucide-react";
+import { Mail } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
 import CopyButton from "@/components/CopyButton";
 import LinkedinIcon from "@/components/icons/LinkedinIcon";
+import GithubIcon from "@/components/icons/GithubIcon";
+import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
 import { finalCTA, profile } from "@/lib/data";
 
 export default function FinalCTA() {
@@ -39,10 +41,10 @@ export default function FinalCTA() {
             />
             <button
               type="submit"
-              className="btn-lift mt-4 inline-flex h-12 items-center gap-2 rounded-full bg-accent-strong px-6 text-sm font-medium text-background hover:bg-accent-strong-hover"
+              className="btn-lift mt-4 inline-flex h-12 items-center gap-2 rounded-full bg-accent-strong px-6 text-sm font-medium text-white hover:bg-accent-strong-hover"
             >
+              <WhatsAppIcon size={16} />
               {finalCTA.submitLabel}
-              <Send size={16} aria-hidden="true" />
             </button>
           </form>
 
@@ -55,6 +57,16 @@ export default function FinalCTA() {
             >
               <LinkedinIcon size={16} />
               Connect on LinkedIn
+            </a>
+
+            <a
+              href={profile.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Mubeen Ejaz on GitHub"
+              className="btn-lift flex h-12 w-12 items-center justify-center rounded-full border border-border text-foreground hover:border-accent hover:text-accent"
+            >
+              <GithubIcon size={18} />
             </a>
 
             <div className="flex flex-wrap items-center gap-3">

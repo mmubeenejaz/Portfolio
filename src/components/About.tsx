@@ -1,7 +1,6 @@
-import { Download } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
 import Reveal from "@/components/Reveal";
-import { about, profile } from "@/lib/data";
+import { about } from "@/lib/data";
 
 export default function About() {
   return (
@@ -34,15 +33,6 @@ export default function About() {
             {about.credential.role} · {about.credential.company} ·{" "}
             {about.credential.period} · {about.credential.note}
           </p>
-
-          <a
-            href={profile.resumeUrl}
-            download
-            className="btn-lift mt-6 inline-flex items-center gap-2 text-sm text-muted hover:text-accent"
-          >
-            <Download size={14} />
-            {about.resumeLabel}
-          </a>
         </Reveal>
       </div>
     </section>

@@ -12,20 +12,20 @@ export const profile = {
 
 export const hero = {
   headline: "I turn ideas into software.",
-  positioning: "Product Owner × AI Product Engineer",
+  positioning: "Product Owner and AI Product Engineer",
   statement: "I used to write the specs. Now I build and ship the product.",
-  workflow: ["Idea", "Product", "AI", "Engineering", "Ship"],
   primaryCta: { label: "Explore what I've built", href: "#work" },
   secondaryCta: { label: "Let's build something", href: "#contact" },
+  resumeLabel: "Download Resume",
 };
 
 export const featuredProject = {
-  eyebrow: "Featured Product",
+  eyebrow: "Personal Projects",
   name: "Nisab",
   subtitle: "Personal Finance OS",
   description:
     "A modern personal finance platform designed to give people a clearer picture of their money, spending, goals, and financial decisions in one place.",
-  meta: { role: "Product + Engineering", type: "SaaS / FinTech", status: "Live" },
+  meta: { role: "Product and Engineering", type: "SaaS / FinTech", status: "Live" },
   problemHeading: "The Problem",
   problem:
     "Personal finances are usually scattered across spreadsheets, bank records, and notes, making it hard to see where money is going, how wealth is growing, or what's outstanding.",
@@ -72,17 +72,6 @@ export const featuredProject = {
     { label: "Investments", description: "Stocks, funds, gold, property, and business in one portfolio." },
     { label: "Zakat", description: "A fully manual, auditable Zakat tracker." },
     { label: "Budgets", description: "Spending analysis derived from a single ledger." },
-  ],
-  pipeline: [
-    "Problem",
-    "Product Discovery",
-    "Requirements",
-    "Design",
-    "Architecture",
-    "Build",
-    "AI-Assisted Engineering",
-    "Testing",
-    "Deployment",
   ],
   aiHeading: "How AI Was Used",
   ai: "AI accelerated implementation through Claude Code-assisted development. Nisab has no runtime AI feature today; deterministic financial correctness (one ledger, exact decimal math, tenant isolation) was the priority before layering on anything probabilistic.",
@@ -188,15 +177,14 @@ export const about = {
     role: "Business Analyst & Product Owner",
     company: "Reporteq (Pvt.) Ltd.",
     period: "Dec 2022 – Present",
-    note: "50+ client projects shipped",
+    note: "more than 50 client projects shipped",
   },
-  resumeLabel: "Download résumé",
 };
 
 export const finalCTA = {
   heading: "Have something worth building?",
   subheading: "Tell me the problem. Let's turn it into software.",
-  inputPlaceholder: "What are you trying to build? Describe the problem...",
+  inputPlaceholder: "Write the message you would like to send Mubeen on WhatsApp.",
   submitLabel: "Let's build it.",
 };
 

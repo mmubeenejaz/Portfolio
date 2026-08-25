@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Download } from "lucide-react";
 import { profile, hero } from "@/lib/data";
 
 function findAvatar() {
@@ -57,7 +57,7 @@ export default function Hero() {
           >
             <a
               href={hero.primaryCta.href}
-              className="btn-lift inline-flex h-12 items-center gap-2 rounded-full bg-accent-strong px-6 text-sm font-medium text-background hover:bg-accent-strong-hover"
+              className="btn-lift inline-flex h-12 items-center gap-2 rounded-full bg-accent-strong px-6 text-sm font-medium text-white hover:bg-accent-strong-hover"
             >
               {hero.primaryCta.label}
               <ArrowRight size={16} aria-hidden="true" />
@@ -68,29 +68,14 @@ export default function Hero() {
             >
               {hero.secondaryCta.label}
             </a>
-          </div>
-
-          <div
-            className="mt-8 flex flex-col items-start gap-2 animate-fade-up sm:flex-row sm:items-center sm:gap-3"
-            style={{ animationDelay: "160ms" }}
-          >
-            {hero.workflow.map((step, index) => (
-              <div key={step} className="flex items-center gap-2 sm:contents">
-                {index > 0 && (
-                  <span aria-hidden="true" className="text-muted-2 sm:hidden">
-                    ↓
-                  </span>
-                )}
-                {index > 0 && (
-                  <span aria-hidden="true" className="hidden text-muted-2 sm:inline">
-                    →
-                  </span>
-                )}
-                <span className="rounded-full border border-border bg-background px-2.5 py-1 text-xs text-muted">
-                  {step}
-                </span>
-              </div>
-            ))}
+            <a
+              href={profile.resumeUrl}
+              download
+              className="btn-lift inline-flex h-12 items-center gap-2 rounded-full border border-border px-6 text-sm font-medium text-foreground hover:border-accent hover:text-accent"
+            >
+              <Download size={16} aria-hidden="true" />
+              {hero.resumeLabel}
+            </a>
           </div>
         </div>
 
@@ -99,7 +84,7 @@ export default function Hero() {
           style={{ animationDelay: "80ms" }}
         >
           <div className="relative h-56 w-56 shrink-0 sm:h-64 sm:w-64 md:h-72 md:w-72">
-            <div className="absolute -inset-3 rounded-full bg-gradient-to-br from-accent/30 via-accent/5 to-transparent blur-xl" />
+            <div className="absolute -inset-3 rounded-full bg-gradient-to-br from-accent-strong/30 via-accent-secondary/10 to-transparent blur-xl" />
             <div className="relative h-full w-full overflow-hidden rounded-full border border-border bg-surface">
               {avatar ? (
                 <Image

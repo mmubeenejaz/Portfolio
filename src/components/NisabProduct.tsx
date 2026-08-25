@@ -14,10 +14,24 @@ export default function NisabProduct() {
 
         <Reveal delay={60}>
           <div className="card-hover rounded-3xl border border-border bg-surface p-6 sm:p-10">
-            <h3 className="text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
-              {featuredProject.name}
-            </h3>
-            <p className="mt-1 text-base text-accent">{featuredProject.subtitle}</p>
+            <div className="flex flex-wrap items-start justify-between gap-4">
+              <div>
+                <h3 className="text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
+                  {featuredProject.name}
+                </h3>
+                <p className="mt-1 text-base text-accent">{featuredProject.subtitle}</p>
+              </div>
+
+              <a
+                href={featuredProject.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-lift inline-flex h-11 shrink-0 items-center gap-2 rounded-full bg-accent-strong px-5 text-sm font-medium text-white hover:bg-accent-strong-hover"
+              >
+                {featuredProject.primaryCtaLabel}
+                <ArrowUpRight size={16} aria-hidden="true" />
+              </a>
+            </div>
 
             <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
               <span className="flex items-baseline gap-1.5">
@@ -49,33 +63,6 @@ export default function NisabProduct() {
 
             <div className="mt-8">
               <NisabPreview />
-            </div>
-
-            <div className="mt-8 flex flex-wrap gap-3">
-              <a
-                href={featuredProject.liveUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-lift inline-flex h-11 items-center gap-2 rounded-full bg-accent-strong px-5 text-sm font-medium text-background hover:bg-accent-strong-hover"
-              >
-                {featuredProject.primaryCtaLabel}
-                <ArrowUpRight size={16} aria-hidden="true" />
-              </a>
-            </div>
-
-            <div className="scrollbar-hide mt-8 overflow-x-auto">
-              <div className="flex w-max items-center gap-2 whitespace-nowrap text-xs text-muted-2">
-                {featuredProject.pipeline.map((stage, index) => (
-                  <span key={stage} className="flex items-center gap-2">
-                    <span className="rounded-full border border-border bg-background px-2.5 py-1">
-                      {stage}
-                    </span>
-                    {index < featuredProject.pipeline.length - 1 && (
-                      <span aria-hidden="true">→</span>
-                    )}
-                  </span>
-                ))}
-              </div>
             </div>
 
             <div className="mt-10 grid gap-8 sm:grid-cols-2">
