@@ -5,7 +5,7 @@ import { ArrowRight, Download } from "lucide-react";
 import { profile, hero } from "@/lib/data";
 
 function findAvatar() {
-  const candidates = ["portrait.png", "profile.jpg", "profile.jpeg", "profile.png", "profile.webp"];
+  const candidates = ["profile.jpg", "profile.jpeg", "profile.png", "profile.webp"];
   for (const file of candidates) {
     if (fs.existsSync(path.join(process.cwd(), "public", file))) {
       return `/${file}`;
