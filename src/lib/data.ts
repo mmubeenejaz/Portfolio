@@ -11,12 +11,31 @@ export const profile = {
 };
 
 export const hero = {
+  overline: "Product Owner · AI Product Engineer",
+  name: "Mubeen Ejaz",
   headline: "I turn ideas into software.",
-  positioning: "Product Owner and AI Product Engineer",
   statement: "I used to write the specs. Now I build and ship the product.",
   primaryCta: { label: "Explore what I've built", href: "#work" },
   secondaryCta: { label: "Let's build something", href: "#contact" },
-  resumeLabel: "Download Resume",
+  resumeLabel: "Download resume",
+};
+
+export const about = {
+  overline: "The shift",
+  title: "Product Owner to AI Product Engineer",
+  statement: "I spent years defining software for developers. Now I build and ship it myself.",
+  principles: [
+    { icon: "target", title: "Product", description: "Understand the problem." },
+    { icon: "code", title: "Engineering", description: "Build the solution." },
+    { icon: "cpu", title: "AI", description: "Use it where it creates leverage." },
+    { icon: "rocket", title: "Shipping", description: "Care about what reaches users." },
+  ],
+  credential: {
+    role: "Business Analyst & Product Owner",
+    company: "Reporteq (Pvt.) Ltd.",
+    period: "Dec 2022 – Present",
+    note: "more than 50 client projects shipped",
+  },
 };
 
 export const featuredProject = {
@@ -25,7 +44,7 @@ export const featuredProject = {
   subtitle: "Personal Finance OS",
   description:
     "A modern personal finance platform designed to give people a clearer picture of their money, spending, goals, and financial decisions in one place.",
-  meta: { role: "Product and Engineering", type: "SaaS / FinTech", status: "Live" },
+  meta: { role: "Product and engineering", type: "SaaS / FinTech", status: "Live" },
   problemHeading: "The Problem",
   problem:
     "Personal finances are usually scattered across spreadsheets, bank records, and notes, making it hard to see where money is going, how wealth is growing, or what's outstanding.",
@@ -68,10 +87,10 @@ export const featuredProject = {
     "Vercel",
   ],
   previewPanels: [
-    { label: "Net Worth", description: "Tracked over time across every asset and liability." },
-    { label: "Investments", description: "Stocks, funds, gold, property, and business in one portfolio." },
-    { label: "Zakat", description: "A fully manual, auditable Zakat tracker." },
-    { label: "Budgets", description: "Spending analysis derived from a single ledger." },
+    { label: "Net worth", description: "Tracked over time" },
+    { label: "Investments", description: "Multi-asset portfolio" },
+    { label: "Zakat", description: "Manual tracker" },
+    { label: "Budgets", description: "Spending analysis" },
   ],
   aiHeading: "How AI Was Used",
   ai: "AI accelerated implementation through Claude Code-assisted development. Nisab has no runtime AI feature today; deterministic financial correctness (one ledger, exact decimal math, tenant isolation) was the priority before layering on anything probabilistic.",
@@ -79,7 +98,70 @@ export const featuredProject = {
   primaryCtaLabel: "Explore Nisab",
 };
 
+export const services = {
+  overline: "Services",
+  title: "What I can build for you",
+  description:
+    "From a first idea to a shipped product: discovery, design, engineering and the AI layer, done by one person who has done all four.",
+  items: [
+    {
+      icon: "layout-dashboard",
+      title: "Web & SaaS development",
+      description:
+        "Modern web apps, SaaS platforms, customer portals, dashboards, and internal business systems.",
+    },
+    {
+      icon: "smartphone",
+      title: "Mobile app development",
+      description:
+        "Production-ready Android and iOS apps for customers, employees, operations, bookings, and business workflows.",
+    },
+    {
+      icon: "cpu",
+      title: "AI application development",
+      description:
+        "AI-powered applications, agents, assistants, document processing, knowledge systems, and intelligent workflows.",
+    },
+    {
+      icon: "workflow",
+      title: "Business automation",
+      description:
+        "Automate repetitive tasks, reporting, communications, data entry, and operational workflows with AI and integrations.",
+    },
+    {
+      icon: "pen-tool",
+      title: "Product design & UI/UX",
+      description:
+        "Product strategy, user flows, UI/UX, design systems, responsive interfaces, and polished landing pages.",
+    },
+    {
+      icon: "rocket",
+      title: "MVP development",
+      description:
+        "Turn an idea into a working MVP quickly, helping you validate the product with real users in weeks instead of months.",
+    },
+    {
+      icon: "plug",
+      title: "API & systems integration",
+      description:
+        "Connect your software with payments, WhatsApp, CRMs, third-party APIs, databases, and existing business systems.",
+    },
+    {
+      icon: "table-2",
+      title: "Custom business software",
+      description:
+        "Replace spreadsheets and disconnected tools with purpose-built software designed around your business processes.",
+    },
+  ],
+  closing: {
+    text: "Not sure which of these you need? Describe the problem and I'll tell you what it actually takes.",
+    ctaLabel: "Start a project",
+    ctaHref: "#contact",
+  },
+};
+
 export const howIBuild = {
+  overline: "Method",
   heading: "How I build",
   steps: [
     {
@@ -120,77 +202,66 @@ export const howIBuild = {
   ],
 };
 
-export const activeBuilds = [
-  {
-    number: "02",
-    name: "Nazim",
-    subtitle: "Financial & Operations Platform for Academies & Schools",
-    description:
-      "A web platform helping academies and schools manage students, fees, financials, and day-to-day operations, with WhatsApp integrated for parent communication, automated reminders, and fee collection.",
-    status: "In development",
-    capabilities: [
-      "Student management",
-      "Fee management",
-      "Financial tracking",
-      "Financial reporting",
-      "Parent communication",
-      "WhatsApp integration",
-      "Automated fee reminders",
-      "Fee payment workflows",
-      "JazzCash fee payments",
-      "Payment confirmation",
-    ],
-    idea: "Give academies and schools one place to manage students, fees and financial operations, while giving parents a simple communication and payment experience through WhatsApp.",
-    flow: ["Students", "Fees", "Financial Management", "WhatsApp", "Parent", "JazzCash", "Payment Confirmation"],
-  },
-  {
-    number: "03",
-    name: "Small Business Cashflow OS",
-    subtitle: "Financial Operating System for Small Businesses",
-    description:
-      "A SaaS platform designed to help small businesses understand and manage cash flow, income, expenses, receivables, and financial performance in one place.",
-    status: "In development",
-    capabilities: [
-      "Cash flow tracking",
-      "Income tracking",
-      "Expense tracking",
-      "Receivables",
-      "Financial reporting",
-      "Business performance insights",
-      "Centralized financial visibility",
-    ],
-    idea: "Give small businesses a simple financial operating system for understanding where cash is coming from, where it is going, what is outstanding, and how the business is performing.",
-    flow: null as string[] | null,
-  },
-];
-
-export const about = {
-  eyebrow: "Product Owner to AI Product Engineer",
-  statement: "I spent years defining software for developers. Now I build and ship it myself.",
-  principles: [
-    { title: "Product", description: "Understand the problem." },
-    { title: "Engineering", description: "Build the solution." },
-    { title: "AI", description: "Use it where it creates leverage." },
-    { title: "Shipping", description: "Care about what reaches users." },
+export const activeBuilds = {
+  overline: "In progress",
+  heading: "Currently building",
+  items: [
+    {
+      number: "02",
+      name: "Nazim",
+      subtitle: "Financial & Operations Platform for Academies & Schools",
+      description: "Financial and operations platform for academies and schools.",
+      status: "In development",
+      capabilities: [
+        "Student management",
+        "Fee management",
+        "Financial tracking",
+        "Financial reporting",
+        "Parent communication",
+        "WhatsApp integration",
+        "Automated fee reminders",
+        "Fee payment workflows",
+        "JazzCash fee payments",
+        "Payment confirmation",
+      ],
+      idea: "Give academies and schools one place to manage students, fees and financial operations, while giving parents a simple communication and payment experience through WhatsApp.",
+      flow: ["Students", "Fees", "Financial Management", "WhatsApp", "Parent", "JazzCash", "Payment Confirmation"],
+    },
+    {
+      number: "03",
+      name: "Small Business Cashflow OS",
+      subtitle: "Financial Operating System for Small Businesses",
+      description: "Financial operating system for small businesses.",
+      status: "In development",
+      capabilities: [
+        "Cash flow tracking",
+        "Income tracking",
+        "Expense tracking",
+        "Receivables",
+        "Financial reporting",
+        "Business performance insights",
+        "Centralized financial visibility",
+      ],
+      idea: "Give small businesses a simple financial operating system for understanding where cash is coming from, where it is going, what is outstanding, and how the business is performing.",
+      flow: null as string[] | null,
+    },
   ],
-  credential: {
-    role: "Business Analyst & Product Owner",
-    company: "Reporteq (Pvt.) Ltd.",
-    period: "Dec 2022 – Present",
-    note: "more than 50 client projects shipped",
-  },
 };
 
 export const finalCTA = {
+  eyebrow: "Contact",
   heading: "Have something worth building?",
   subheading: "Tell me the problem. Let's turn it into software.",
   inputPlaceholder: "Write the message you would like to send Mubeen on WhatsApp.",
   submitLabel: "Let's build it.",
+  footerTagline: "Product Owner · AI Product Engineer",
 };
 
 export const nav = [
-  { label: "About", href: "#about" },
+  { label: "Approach", href: "#approach" },
   { label: "Work", href: "#work" },
   { label: "Process", href: "#process" },
+  { label: "Services", href: "#services" },
+  { label: "Building", href: "#building" },
   { label: "Contact", href: "#contact" },
 ];

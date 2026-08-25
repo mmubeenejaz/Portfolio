@@ -6,132 +6,120 @@ import { featuredProject } from "@/lib/data";
 
 export default function NisabProduct() {
   return (
-    <section id="work" className="scroll-mt-28 border-t border-border px-6 py-20">
-      <div className="mx-auto max-w-5xl">
+    <section
+      id="work"
+      className="scroll-mt-28 relative overflow-hidden border-t border-border px-6 py-24 sm:px-10"
+      style={{ background: "var(--gradient-ground)" }}
+    >
+      <span
+        aria-hidden="true"
+        className="blob pointer-events-none absolute -right-40 -bottom-52 h-[560px] w-[560px] opacity-25"
+      />
+
+      <div className="relative mx-auto flex max-w-[1120px] flex-col gap-9">
         <Reveal>
-          <SectionHeading title={featuredProject.eyebrow} />
+          <SectionHeading overline={featuredProject.eyebrow} title={featuredProject.name} />
+        </Reveal>
+
+        <Reveal delay={40}>
+          <div className="flex flex-wrap items-end justify-between gap-6">
+            <div className="flex flex-wrap items-center gap-2.5 font-mono text-xs text-[color:var(--fog-400)]">
+              <span className="text-[color:var(--fog-200)]">Role</span>
+              <span>{featuredProject.meta.role}</span>
+              <span>·</span>
+              <span className="text-[color:var(--fog-200)]">Type</span>
+              <span>{featuredProject.meta.type}</span>
+              <span>·</span>
+              <span className="text-[color:var(--fog-200)]">Status</span>
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-[color:var(--green-400)]/30 bg-[color:var(--green-400)]/10 px-2.5 py-1 text-[color:var(--green-400)]">
+                <span className="h-1.5 w-1.5 rounded-full bg-[color:var(--green-400)]" aria-hidden="true" />
+                {featuredProject.meta.status}
+              </span>
+            </div>
+            <a
+              href={featuredProject.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-lift inline-flex h-10 shrink-0 items-center gap-2 rounded-full border border-border px-5 text-sm font-medium text-foreground hover:border-accent hover:text-accent"
+            >
+              {featuredProject.primaryCtaLabel}
+              <ArrowUpRight size={16} aria-hidden="true" />
+            </a>
+          </div>
         </Reveal>
 
         <Reveal delay={60}>
-          <div className="card-hover rounded-3xl border border-border bg-surface p-6 sm:p-10">
-            <div className="flex flex-wrap items-start justify-between gap-4">
-              <div>
-                <h3 className="text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
-                  {featuredProject.name}
-                </h3>
-                <p className="mt-1 text-base text-accent">{featuredProject.subtitle}</p>
-              </div>
+          <p className="max-w-[70ch] text-lg leading-[1.6] text-[color:var(--fog-200)]">
+            {featuredProject.description}
+          </p>
+        </Reveal>
 
-              <a
-                href={featuredProject.liveUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-lift inline-flex h-11 shrink-0 items-center gap-2 rounded-full bg-accent-strong px-5 text-sm font-medium text-white hover:bg-accent-strong-hover"
-              >
-                {featuredProject.primaryCtaLabel}
-                <ArrowUpRight size={16} aria-hidden="true" />
-              </a>
-            </div>
+        <Reveal>
+          <NisabPreview />
+        </Reveal>
 
-            <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
-              <span className="flex items-baseline gap-1.5">
-                <span className="text-xs uppercase tracking-wide text-muted-2">Role</span>
-                <span className="font-medium text-foreground">{featuredProject.meta.role}</span>
+        <Reveal>
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+            <div className="flex flex-col gap-3 rounded-2xl border border-border bg-surface p-6">
+              <span className="font-mono text-[11px] tracking-[0.18em] text-muted uppercase">
+                The problem
               </span>
-              <span className="text-border" aria-hidden="true">
-                ·
-              </span>
-              <span className="flex items-baseline gap-1.5">
-                <span className="text-xs uppercase tracking-wide text-muted-2">Type</span>
-                <span className="font-medium text-foreground">{featuredProject.meta.type}</span>
-              </span>
-              <span className="text-border" aria-hidden="true">
-                ·
-              </span>
-              <span className="flex items-center gap-1.5">
-                <span className="text-xs uppercase tracking-wide text-muted-2">Status</span>
-                <span className="flex items-center gap-1.5 font-medium text-accent">
-                  <span className="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden="true" />
-                  {featuredProject.meta.status}
-                </span>
-              </span>
+              <p className="text-base leading-[1.6] text-[color:var(--fog-300)]">{featuredProject.problem}</p>
             </div>
-
-            <p className="mt-5 max-w-3xl text-lg leading-7 text-muted">
-              {featuredProject.description}
-            </p>
-
-            <div className="mt-8">
-              <NisabPreview />
+            <div className="flex flex-col gap-3 rounded-2xl border border-border bg-surface p-6">
+              <span className="font-mono text-[11px] tracking-[0.18em] text-muted uppercase">
+                What I built
+              </span>
+              <p className="text-base leading-[1.6] text-[color:var(--fog-300)]">{featuredProject.built}</p>
             </div>
+          </div>
+        </Reveal>
 
-            <div className="mt-10 grid gap-8 sm:grid-cols-2">
-              <div>
-                <h4 className="text-sm font-medium text-foreground">
-                  {featuredProject.problemHeading}
-                </h4>
-                <p className="mt-2 text-sm leading-6 text-muted">{featuredProject.problem}</p>
-              </div>
-              <div>
-                <h4 className="text-sm font-medium text-foreground">
-                  {featuredProject.builtHeading}
-                </h4>
-                <p className="mt-2 text-sm leading-6 text-muted">{featuredProject.built}</p>
-              </div>
-            </div>
-
-            <div className="mt-8">
-              <h4 className="text-sm font-medium text-foreground">
-                {featuredProject.roleHeading}
-              </h4>
-              <div className="mt-3 flex flex-wrap gap-2">
-                {featuredProject.role.map((item) => (
-                  <span
-                    key={item}
-                    className="rounded-full border border-border bg-background px-2.5 py-1 text-xs text-muted"
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            <div className="mt-8">
-              <h4 className="text-sm font-medium text-foreground">
-                {featuredProject.featuresHeading}
-              </h4>
-              <ul className="mt-3 grid gap-2 sm:grid-cols-2">
-                {featuredProject.features.map((feature) => (
-                  <li key={feature} className="flex gap-2.5 text-sm leading-6 text-muted">
+        <Reveal>
+          <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
+            <div className="flex flex-col gap-7">
+              <div className="flex flex-col gap-3.5">
+                <span className="font-mono text-[11px] tracking-[0.18em] text-muted uppercase">My role</span>
+                <div className="flex flex-wrap gap-2">
+                  {featuredProject.role.map((item) => (
                     <span
-                      aria-hidden="true"
-                      className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-accent"
-                    />
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="mt-8">
-              <h4 className="text-sm font-medium text-foreground">
-                {featuredProject.technologyHeading}
-              </h4>
-              <div className="mt-3 flex flex-wrap gap-2">
-                {featuredProject.technology.map((item) => (
-                  <span
-                    key={item}
-                    className="rounded-full border border-border bg-background px-2.5 py-1 text-xs text-muted"
-                  >
-                    {item}
-                  </span>
-                ))}
+                      key={item}
+                      className="rounded-full border border-border bg-surface-inset px-3 py-1.5 text-xs whitespace-nowrap text-[color:var(--fog-300)]"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div className="flex flex-col gap-3.5">
+                <span className="font-mono text-[11px] tracking-[0.18em] text-muted uppercase">Technology</span>
+                <div className="flex flex-wrap gap-2">
+                  {featuredProject.technology.map((item) => (
+                    <span
+                      key={item}
+                      className="rounded-full border border-border bg-surface-inset px-3 py-1.5 text-xs whitespace-nowrap text-[color:var(--fog-300)]"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
 
-            <div className="mt-8 border-t border-border pt-6">
-              <h4 className="text-sm font-medium text-foreground">{featuredProject.aiHeading}</h4>
-              <p className="mt-2 text-sm leading-6 text-muted">{featuredProject.ai}</p>
+            <div className="flex flex-col gap-4 rounded-2xl border border-border bg-surface p-6">
+              <span className="font-mono text-[11px] tracking-[0.18em] text-muted uppercase">Key features</span>
+              <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
+                {featuredProject.features.map((feature) => (
+                  <span key={feature} className="text-sm leading-[1.5] text-[color:var(--fog-200)]">
+                    {feature}
+                  </span>
+                ))}
+              </div>
+              <span aria-hidden="true" className="h-px bg-border" />
+              <div className="flex flex-col gap-2.5">
+                <span className="font-mono text-[11px] tracking-[0.18em] text-muted uppercase">How AI was used</span>
+                <p className="text-sm leading-[1.6] text-[color:var(--fog-300)]">{featuredProject.ai}</p>
+              </div>
             </div>
           </div>
         </Reveal>

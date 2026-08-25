@@ -10,6 +10,8 @@ export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [activeHref, setActiveHref] = useState<string | null>(null);
   const whatsappUrl = `https://wa.me/${profile.whatsappNumber}?text=${encodeURIComponent(profile.whatsappMessage)}`;
+  const links = nav.filter((item) => item.href !== "#contact");
+  const contact = nav.find((item) => item.href === "#contact")!;
 
   useEffect(() => {
     const sections = nav
@@ -41,40 +43,40 @@ export default function Nav() {
   }, []);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 flex justify-center px-4 pt-4 sm:pt-6">
+    <header className="fixed inset-x-0 top-4 z-50 flex justify-center px-4 sm:top-[18px]">
       <div
-        className={`glass flex h-16 items-center gap-2 rounded-full pl-5 pr-3 transition-[background,box-shadow] duration-300 sm:gap-3 sm:pl-6 ${
+        className={`glass relative flex h-[60px] w-full max-w-[1120px] items-center justify-between gap-4 rounded-full pl-5 pr-2 transition-[background,box-shadow] duration-300 sm:pl-6 ${
           scrolled ? "glass-scrolled" : ""
         }`}
       >
         <a
           href="#top"
-          className="flex items-center text-base font-semibold tracking-tight whitespace-nowrap text-foreground"
+          className="flex items-center gap-2.5 text-[15px] font-semibold tracking-tight whitespace-nowrap text-foreground"
         >
+          <span className="flex gap-1">
+            <span className="h-[7px] w-[7px] rounded-full bg-accent" />
+            <span className="h-[7px] w-[7px] rounded-full bg-accent/35" />
+          </span>
           Mubeen Ejaz
         </a>
 
-        <span
-          className="mx-2 hidden h-6 w-px bg-white/10 md:block"
-          aria-hidden="true"
-        />
-
-        <nav className="hidden items-center md:flex">
-          {nav.map((item) => (
+        <nav className="hidden items-center gap-0.5 md:flex">
+          {links.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className="relative rounded-full px-4 py-2.5 text-sm text-muted transition-colors hover:text-foreground"
+              className="relative rounded-full px-3.5 py-2 text-[13px] text-[color:var(--fog-300)] transition-colors hover:bg-white/8 hover:text-foreground"
+              style={activeHref === item.href ? { color: "var(--foreground)" } : undefined}
             >
               {item.label}
-              {activeHref === item.href && (
-                <span
-                  aria-hidden="true"
-                  className="absolute -bottom-1 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-accent"
-                />
-              )}
             </a>
           ))}
+          <a
+            href={contact.href}
+            className="btn-lift ml-2 rounded-full bg-accent px-5 py-[11px] text-[12px] font-semibold tracking-wide text-[color:var(--ink-900)] uppercase hover:bg-accent-hover"
+          >
+            {contact.label}
+          </a>
         </nav>
 
         <a
@@ -82,7 +84,7 @@ export default function Nav() {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Chat on WhatsApp"
-          className="flex h-11 w-11 items-center justify-center rounded-full text-muted transition-colors hover:text-accent"
+          className="hidden h-11 w-11 items-center justify-center rounded-full text-muted transition-colors hover:text-accent sm:flex md:hidden"
         >
           <WhatsAppIcon size={20} />
         </a>
@@ -99,7 +101,7 @@ export default function Nav() {
       </div>
 
       {open && (
-        <nav className="glass absolute top-[calc(4rem+1.5rem)] flex w-[calc(100%-2rem)] max-w-xs flex-col gap-1 rounded-3xl p-3 md:hidden">
+        <nav className="glass absolute top-[calc(60px+1.5rem)] flex w-[calc(100%-2rem)] max-w-xs flex-col gap-1 rounded-3xl p-3 md:hidden">
           {nav.map((item) => (
             <a
               key={item.href}
