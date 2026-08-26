@@ -5,16 +5,16 @@ import { Menu, X } from "lucide-react";
 import { nav, profile } from "@/lib/data";
 import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
 
+const CONTACT = { label: "Contact", href: "#contact" };
+
 export default function Nav() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeHref, setActiveHref] = useState<string | null>(null);
   const whatsappUrl = `https://wa.me/${profile.whatsappNumber}?text=${encodeURIComponent(profile.whatsappMessage)}`;
-  const links = nav.filter((item) => item.href !== "#contact");
-  const contact = nav.find((item) => item.href === "#contact")!;
 
   useEffect(() => {
-    const sections = nav
+    const sections = [...nav, CONTACT]
       .map((item) => ({
         href: item.href,
         el: document.querySelector(item.href),
@@ -45,7 +45,7 @@ export default function Nav() {
   return (
     <header className="fixed inset-x-0 top-4 z-50 flex justify-center px-4 sm:top-[18px]">
       <div
-        className={`glass relative flex h-[60px] w-full max-w-[1120px] items-center justify-between gap-4 rounded-full pl-5 pr-2 transition-[background,box-shadow] duration-300 sm:pl-6 ${
+        className={`glass relative flex h-[60px] w-full max-w-[1120px] items-center justify-between gap-4 rounded-full pr-2 pl-5 transition-[background,box-shadow] duration-300 sm:pl-6 ${
           scrolled ? "glass-scrolled" : ""
         }`}
       >
@@ -53,7 +53,7 @@ export default function Nav() {
           href="#top"
           className="flex items-center gap-2.5 text-[15px] font-semibold tracking-tight whitespace-nowrap text-foreground"
         >
-          <span className="flex gap-1">
+          <span className="flex gap-1" aria-hidden="true">
             <span className="h-[7px] w-[7px] rounded-full bg-accent" />
             <span className="h-[7px] w-[7px] rounded-full bg-accent/35" />
           </span>
@@ -61,21 +61,25 @@ export default function Nav() {
         </a>
 
         <nav className="hidden items-center gap-0.5 md:flex">
-          {links.map((item) => (
+          {nav.map((item) => (
             <a
               key={item.href}
               href={item.href}
               className="relative rounded-full px-3.5 py-2 text-[13px] text-[color:var(--fog-300)] transition-colors hover:bg-white/8 hover:text-foreground"
-              style={activeHref === item.href ? { color: "var(--foreground)" } : undefined}
+              style={
+                activeHref === item.href
+                  ? { color: "var(--foreground)" }
+                  : undefined
+              }
             >
               {item.label}
             </a>
           ))}
           <a
-            href={contact.href}
+            href={CONTACT.href}
             className="btn-lift ml-2 rounded-full bg-accent px-5 py-[11px] text-[12px] font-semibold tracking-wide text-[color:var(--ink-900)] uppercase hover:bg-accent-hover"
           >
-            {contact.label}
+            {CONTACT.label}
           </a>
         </nav>
 
@@ -102,7 +106,7 @@ export default function Nav() {
 
       {open && (
         <nav className="glass absolute top-[calc(60px+1.5rem)] flex w-[calc(100%-2rem)] max-w-xs flex-col gap-1 rounded-3xl p-3 md:hidden">
-          {nav.map((item) => (
+          {[...nav, CONTACT].map((item) => (
             <a
               key={item.href}
               href={item.href}

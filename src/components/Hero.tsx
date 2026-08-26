@@ -1,39 +1,20 @@
-import fs from "node:fs";
-import path from "node:path";
 import Image from "next/image";
-import { ArrowRight, Download } from "lucide-react";
-import { profile, hero } from "@/lib/data";
-
-function findAvatar() {
-  const candidates = ["profile.jpg", "profile.jpeg", "profile.png", "profile.webp"];
-  for (const file of candidates) {
-    if (fs.existsSync(path.join(process.cwd(), "public", file))) {
-      return `/${file}`;
-    }
-  }
-  return null;
-}
+import { ArrowRight } from "lucide-react";
+import { hero, profile } from "@/lib/data";
 
 export default function Hero() {
-  const avatar = findAvatar();
-  const initials = profile.name
-    .split(" ")
-    .map((part) => part[0])
-    .join("");
-
   return (
     <section
       id="top"
-      className="relative overflow-hidden pt-[180px] pb-28 sm:pt-[196px]"
-      style={{ background: "var(--gradient-ground)" }}
+      className="relative flex min-h-[100svh] flex-col justify-center px-6 py-20 sm:px-10"
     >
       <span
         aria-hidden="true"
-        className="blob pointer-events-none absolute -top-40 -left-44 h-[620px] w-[620px] opacity-40"
+        className="blob pointer-events-none absolute -top-44 -left-44 h-[560px] w-[560px] opacity-[0.18]"
       />
       <span
         aria-hidden="true"
-        className="bg-grid pointer-events-none absolute top-0 right-0 h-80 w-1/2 opacity-40"
+        className="bg-grid pointer-events-none absolute top-0 right-0 h-72 w-1/2 opacity-25"
         style={{
           WebkitMaskImage:
             "radial-gradient(120% 100% at 80% 0%, #000 0%, rgba(0,0,0,.45) 55%, transparent 100%)",
@@ -42,91 +23,68 @@ export default function Hero() {
         }}
       />
 
-      <div className="relative mx-auto grid w-full max-w-[1120px] gap-16 px-6 sm:px-10 md:grid-cols-[1.1fr_0.9fr] md:items-center">
-        <div className="flex flex-col items-start gap-6">
-          <span
-            className="animate-fade-up font-mono text-[11px] tracking-[0.18em] text-muted uppercase"
-            style={{ animationDelay: "0ms" }}
-          >
-            {hero.overline}
-          </span>
+      <div className="relative mx-auto flex w-full max-w-[1160px] flex-col items-center gap-10 lg:flex-row lg:items-start lg:gap-8">
+        <div className="lg:max-w-[58rem]">
+          <span className="overline">{hero.eyebrow}</span>
 
-          <h1
-            className="animate-fade-up text-balance font-display text-[42px] leading-[1.04] font-light tracking-[-0.03em] text-foreground sm:text-[56px] md:text-[72px]"
-            style={{ animationDelay: "40ms" }}
-          >
-            {hero.name}
-            <br />
-            <span className="text-accent">{hero.headline}</span>
+          <h1 className="mt-7 text-balance font-display text-[clamp(44px,7.5vw,88px)] leading-[1.02] font-light tracking-[-0.035em] text-foreground">
+            {hero.headline}
           </h1>
 
-          <span
-            aria-hidden="true"
-            className="animate-fade-up h-0.5 w-24"
-            style={{ background: "var(--gradient-rule)", animationDelay: "60ms" }}
-          />
-
-          <p
-            className="animate-fade-up max-w-[38ch] text-balance text-lg leading-[1.6] text-[color:var(--fog-300)]"
-            style={{ animationDelay: "80ms" }}
-          >
-            {hero.statement}
+          <p className="mt-7 max-w-[36ch] text-[clamp(17px,2vw,21px)] leading-[1.55] text-body">
+            {hero.lead}
           </p>
 
-          <div
-            className="animate-fade-up mt-1.5 flex flex-wrap items-center gap-3"
-            style={{ animationDelay: "120ms" }}
-          >
+          <div className="mt-11 flex flex-wrap items-center gap-x-8 gap-y-5">
             <a
               href={hero.primaryCta.href}
-              className="btn-lift inline-flex h-12 items-center gap-2 rounded-full bg-accent px-6 text-sm font-medium text-[color:var(--ink-900)] hover:bg-accent-hover"
+              className="group inline-flex h-13 items-center gap-2.5 rounded-full bg-accent px-7 text-[15px] font-medium text-[color:var(--ink-900)] transition-colors duration-300 hover:bg-accent-hover"
             >
               {hero.primaryCta.label}
-              <ArrowRight size={16} aria-hidden="true" />
+              <ArrowRight
+                size={17}
+                aria-hidden="true"
+                className="transition-transform duration-300 group-hover:translate-x-1"
+              />
             </a>
+
             <a
               href={hero.secondaryCta.href}
-              className="btn-lift inline-flex h-12 items-center gap-2 rounded-full border border-border px-6 text-sm font-medium text-foreground hover:border-accent hover:text-accent"
+              className="link-underline text-[15px] text-foreground transition-colors duration-300 hover:text-accent"
             >
               {hero.secondaryCta.label}
             </a>
+
             <a
               href={profile.resumeUrl}
               download
-              className="btn-lift inline-flex h-12 items-center gap-2 rounded-full px-6 text-sm font-medium text-muted hover:text-accent"
+              className="link-underline text-[13px] text-muted transition-colors duration-300 hover:text-body"
             >
-              <Download size={16} aria-hidden="true" />
               {hero.resumeLabel}
             </a>
           </div>
         </div>
 
-        <div
-          className="animate-fade-up relative mx-auto w-full max-w-[300px] justify-self-end md:mx-0"
-          style={{ animationDelay: "80ms" }}
-        >
-          <div
-            className="relative aspect-[4/5] w-full rounded-3xl p-px"
-            style={{ background: "linear-gradient(160deg, rgba(34,199,220,.5), rgba(159,182,189,.06) 55%)" }}
-          >
-            <div className="relative h-full w-full overflow-hidden rounded-[23px] bg-surface">
-              {avatar ? (
-                <Image
-                  src={avatar}
-                  alt={`Portrait of ${profile.name}`}
-                  fill
-                  sizes="300px"
-                  className="object-cover"
-                  priority
-                />
-              ) : (
-                <div className="flex h-full w-full items-center justify-center font-mono text-5xl font-semibold text-muted-2">
-                  {initials}
-                </div>
-              )}
-            </div>
+        <div className="order-first shrink-0 lg:order-last">
+          <div className="relative mx-auto aspect-[4/5] w-[210px] overflow-hidden rounded-[22%] lg:mx-0 lg:w-[268px]">
+            <Image
+              src="/portrait.png"
+              alt={`Portrait of ${profile.name}`}
+              fill
+              sizes="(min-width: 1024px) 268px, 210px"
+              className="object-cover object-top"
+              priority
+            />
           </div>
         </div>
+      </div>
+
+      <div
+        className="mx-auto mt-16 flex w-full max-w-[1160px] items-center gap-4 lg:mt-24"
+        aria-hidden="true"
+      >
+        <span className="scroll-cue h-10 w-px" />
+        <span className="overline">{hero.scrollCue}</span>
       </div>
     </section>
   );

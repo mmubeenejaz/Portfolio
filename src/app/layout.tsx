@@ -21,22 +21,22 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Mubeen Ejaz | AI Product Engineer & Technical Product Owner",
+  title: "Mubeen Ejaz | Product Owner & AI Product Engineer",
   description:
-    "Portfolio of Mubeen Ejaz, AI Product Engineer and Technical Product Owner turning business problems into working software with hands-on AI-assisted development.",
+    "I turn ideas into software. Product Owner and AI Product Engineer: I understand the problem, design the product, build the software and ship it.",
   keywords: [
     "Mubeen Ejaz",
     "AI Product Engineer",
-    "Technical Product Owner",
+    "Product Owner",
     "Business Analyst",
     "Claude Code",
     "Next.js",
   ],
   authors: [{ name: "Mubeen Ejaz" }],
   openGraph: {
-    title: "Mubeen Ejaz | AI Product Engineer & Technical Product Owner",
+    title: "Mubeen Ejaz | Product Owner & AI Product Engineer",
     description:
-      "Turning business problems into working software with hands-on AI-assisted development.",
+      "I used to write the specs. Now I build and ship the product.",
     type: "website",
   },
 };
@@ -45,9 +45,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${poppins.variable} ${barlow.variable} ${jetbrainsMono.variable} h-full`}
+      className={`${poppins.variable} ${barlow.variable} ${jetbrainsMono.variable} h-full overflow-x-hidden`}
     >
-      <body className="min-h-full bg-background font-sans text-body antialiased">
+      <body className="min-h-full overflow-x-hidden bg-background font-sans text-body antialiased">
+        {/* Without JS the reveal effect never runs, so show everything. */}
         <noscript>
           <style>{".reveal{opacity:1!important;transform:none!important}"}</style>
         </noscript>

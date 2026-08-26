@@ -6,52 +6,121 @@ export const profile = {
   github: "https://github.com/mmubeenejaz",
   whatsappNumber: "923424500018",
   whatsappMessage:
-    "Hi Mubeen, I came across your portfolio and would like to discuss a project or opportunity.",
+    "Hi Mubeen, I came across your portfolio and would like to discuss a project.",
   resumeUrl: "/Mubeen-Ejaz-Resume.docx",
 };
 
 export const hero = {
-  overline: "Product Owner · AI Product Engineer",
-  name: "Mubeen Ejaz",
+  eyebrow: "Product Owner · AI Product Engineer",
   headline: "I turn ideas into software.",
-  statement: "I used to write the specs. Now I build and ship the product.",
-  primaryCta: { label: "Explore what I've built", href: "#work" },
+  lead: "I used to write the specs. Now I build and ship the product.",
+  primaryCta: { label: "Explore my work", href: "#work" },
   secondaryCta: { label: "Let's build something", href: "#contact" },
-  resumeLabel: "Download resume",
+  resumeLabel: "Resume",
+  scrollCue: "Scroll",
 };
 
-export const about = {
-  overline: "The shift",
-  title: "Product Owner to AI Product Engineer",
-  statement: "I spent years defining software for developers. Now I build and ship it myself.",
-  principles: [
-    { icon: "target", title: "Product", description: "Understand the problem." },
-    { icon: "code", title: "Engineering", description: "Build the solution." },
-    { icon: "cpu", title: "AI", description: "Use it where it creates leverage." },
-    { icon: "rocket", title: "Shipping", description: "Care about what reaches users." },
+export const approach = {
+  eyebrow: "How I work",
+  headline: "I used to define software for developers. Now I build it myself.",
+  lead: "The same five moves, every time, in the same order.",
+  steps: [
+    {
+      number: "01",
+      title: "Problem",
+      line: "Understand what actually needs solving.",
+    },
+    {
+      number: "02",
+      title: "Product",
+      line: "Define the experience, scope and priorities.",
+    },
+    {
+      number: "03",
+      title: "AI",
+      line: "Identify where AI creates real leverage.",
+    },
+    {
+      number: "04",
+      title: "Engineering",
+      line: "Design and build the system.",
+    },
+    {
+      number: "05",
+      title: "Ship",
+      line: "Deploy, learn and iterate.",
+    },
   ],
   credential: {
     role: "Business Analyst & Product Owner",
-    company: "Reporteq (Pvt.) Ltd.",
+    company: "ReporteQ",
     period: "Dec 2022 – Present",
-    note: "more than 50 client projects shipped",
+    note: "50+ client projects shipped",
   },
 };
 
-export const featuredProject = {
-  eyebrow: "Personal Projects",
+export const nisab = {
+  eyebrow: "Personal projects",
   name: "Nisab",
-  subtitle: "Personal Finance OS",
-  description:
-    "A modern personal finance platform designed to give people a clearer picture of their money, spending, goals, and financial decisions in one place.",
-  meta: { role: "Product and engineering", type: "SaaS / FinTech", status: "Live" },
-  problemHeading: "The Problem",
-  problem:
-    "Personal finances are usually scattered across spreadsheets, bank records, and notes, making it hard to see where money is going, how wealth is growing, or what's outstanding.",
-  builtHeading: "What I Built",
-  built:
-    "A single platform built around one ledger every balance derives from: income and expenses, budgeting, a multi-asset investment portfolio (stocks, funds, gold, property, business), possessions and liabilities, net worth over time, and a manual Zakat tracker.",
-  roleHeading: "My Role",
+  meta: {
+    what: "Personal finance platform",
+    role: "Product and engineering",
+    status: "Live",
+  },
+  statement: "A personal finance system built around one source of truth.",
+  intro:
+    "Most personal finances live across spreadsheets, bank records and scattered notes. Nisab brings them together into one system for tracking money, investments, liabilities, net worth and Zakat.",
+  beats: [
+    {
+      label: "The problem",
+      title: "Money was scattered.",
+      line: "Balances lived in one place, investments in another, what you owed nowhere at all. No single number you could trust.",
+    },
+    {
+      label: "The idea",
+      title: "Build one ledger.",
+      line: "Every transaction lands in the same place, recorded once, with exact decimal math instead of floating point.",
+    },
+    {
+      label: "The product",
+      title: "Everything derives from it.",
+      line: "Budgets, portfolio, net worth and Zakat are not separate features. They are views of the same ledger.",
+    },
+  ],
+  pillarsLabel: "Six views, one ledger",
+  pillars: [
+    {
+      title: "Income & expenses",
+      line: "Every transaction lands in one ledger, categorised and dated.",
+      bars: [58, 34, 72, 46, 88, 40, 64],
+    },
+    {
+      title: "Budgets",
+      line: "Spending limits measured against what actually happened.",
+      bars: [82, 74, 44, 90, 30, 66, 52],
+    },
+    {
+      title: "Investments",
+      line: "Stocks, funds, gold, property and business in one portfolio.",
+      bars: [30, 42, 55, 61, 70, 84, 96],
+    },
+    {
+      title: "Liabilities",
+      line: "What is owed, tracked alongside what is owned.",
+      bars: [92, 80, 71, 63, 50, 38, 26],
+    },
+    {
+      title: "Net worth",
+      line: "One number, derived from everything above, over time.",
+      bars: [34, 40, 52, 48, 66, 78, 94],
+    },
+    {
+      title: "Zakat",
+      line: "A manual, auditable calculation you can check line by line.",
+      bars: [46, 46, 62, 62, 62, 78, 78],
+    },
+  ],
+  roleLabel: "My role",
   role: [
     "Product discovery",
     "Requirements",
@@ -61,207 +130,97 @@ export const featuredProject = {
     "Testing",
     "Deployment",
   ],
-  featuresHeading: "Key Features",
-  features: [
-    "Income & expense tracking, single-ledger derived",
-    "Budgeting & spending analysis",
-    "Multi-asset investment portfolio (stocks, funds, gold, property, business)",
-    "Possessions & liabilities tracking",
-    "Net worth over time",
-    "Manual Zakat tracker",
-    "Financial reports",
-    "CSV / JSON export",
-  ],
-  technologyHeading: "Technology",
-  technology: [
-    "Next.js 16",
+  stackLabel: "Built with",
+  stack: [
+    "Next.js",
     "TypeScript",
-    "Prisma 7",
-    "PostgreSQL (Supabase)",
+    "Prisma",
+    "PostgreSQL",
     "Supabase Auth",
     "Row-Level Security",
-    "Tailwind CSS",
-    "shadcn/ui",
+    "Tailwind",
     "Recharts",
     "Vitest",
     "Vercel",
   ],
-  previewPanels: [
-    { label: "Net worth", description: "Tracked over time" },
-    { label: "Investments", description: "Multi-asset portfolio" },
-    { label: "Zakat", description: "Manual tracker" },
-    { label: "Budgets", description: "Spending analysis" },
-  ],
-  aiHeading: "How AI Was Used",
-  ai: "AI accelerated implementation through Claude Code-assisted development. Nisab has no runtime AI feature today; deterministic financial correctness (one ledger, exact decimal math, tenant isolation) was the priority before layering on anything probabilistic.",
-  liveUrl: "https://nisab-personal-finance-tracker.vercel.app/login",
-  primaryCtaLabel: "Explore Nisab",
-};
-
-export const services = {
-  overline: "Services",
-  title: "What I can build for you",
-  description:
-    "From a first idea to a shipped product: discovery, design, engineering and the AI layer, done by one person who has done all four.",
-  items: [
-    {
-      icon: "layout-dashboard",
-      title: "Web & SaaS development",
-      description:
-        "Modern web apps, SaaS platforms, customer portals, dashboards, and internal business systems.",
-    },
-    {
-      icon: "smartphone",
-      title: "Mobile app development",
-      description:
-        "Production-ready Android and iOS apps for customers, employees, operations, bookings, and business workflows.",
-    },
-    {
-      icon: "cpu",
-      title: "AI application development",
-      description:
-        "AI-powered applications, agents, assistants, document processing, knowledge systems, and intelligent workflows.",
-    },
-    {
-      icon: "workflow",
-      title: "Business automation",
-      description:
-        "Automate repetitive tasks, reporting, communications, data entry, and operational workflows with AI and integrations.",
-    },
-    {
-      icon: "pen-tool",
-      title: "Product design & UI/UX",
-      description:
-        "Product strategy, user flows, UI/UX, design systems, responsive interfaces, and polished landing pages.",
-    },
-    {
-      icon: "rocket",
-      title: "MVP development",
-      description:
-        "Turn an idea into a working MVP quickly, helping you validate the product with real users in weeks instead of months.",
-    },
-    {
-      icon: "plug",
-      title: "API & systems integration",
-      description:
-        "Connect your software with payments, WhatsApp, CRMs, third-party APIs, databases, and existing business systems.",
-    },
-    {
-      icon: "table-2",
-      title: "Custom business software",
-      description:
-        "Replace spreadsheets and disconnected tools with purpose-built software designed around your business processes.",
-    },
-  ],
-  closing: {
-    text: "Not sure which of these you need? Describe the problem and I'll tell you what it actually takes.",
-    ctaLabel: "Start a project",
-    ctaHref: "#contact",
+  ai: {
+    label: "AI-assisted development",
+    line: "Claude Code accelerated implementation. Nisab does not currently use runtime AI. Financial correctness, deterministic calculations and tenant isolation came first.",
+  },
+  cta: {
+    label: "Explore Nisab",
+    href: "https://nisab-personal-finance-tracker.vercel.app/login",
   },
 };
 
-export const howIBuild = {
-  overline: "Method",
-  heading: "How I build",
-  steps: [
-    {
-      number: "01",
-      title: "Problem",
-      description: "Understand what actually needs solving.",
-      detail:
-        "Talk to the people closest to the problem, not just the request. Most feature ideas are symptoms; the real problem is usually one level deeper.",
-    },
-    {
-      number: "02",
-      title: "Product",
-      description: "Define the experience, scope and priorities.",
-      detail:
-        "Turn the problem into a scoped product: what's in, what's out, and what success looks like. Most of the real thinking happens here, before any code.",
-    },
-    {
-      number: "03",
-      title: "AI",
-      description: "Identify where AI creates real leverage.",
-      detail:
-        "AI earns its place where reasoning is probabilistic and being occasionally wrong is cheap. Everywhere else (money, auth, tenant boundaries), deterministic logic wins.",
-    },
-    {
-      number: "04",
-      title: "Engineering",
-      description: "Design and build the system.",
-      detail:
-        "Architecture decisions get made here, not discovered later: the data model, tenant isolation, and a single source of truth for every important number.",
-    },
-    {
-      number: "05",
-      title: "Ship",
-      description: "Deploy, learn and iterate.",
-      detail:
-        "A shipped v1 that's honestly scoped beats an unshipped v3. Ship it, watch what actually gets used, and let that decide what's next.",
-    },
-  ],
-};
-
-export const activeBuilds = {
-  overline: "In progress",
-  heading: "Currently building",
+export const build = {
+  eyebrow: "Capabilities",
+  headline: "Ways I can help.",
+  lead: "From an idea to a working product, I can take the problem from discovery through design, engineering and deployment.",
   items: [
     {
-      number: "02",
-      name: "Nazim",
-      subtitle: "Financial & Operations Platform for Academies & Schools",
-      description: "Financial and operations platform for academies and schools.",
-      status: "In development",
-      capabilities: [
-        "Student management",
-        "Fee management",
-        "Financial tracking",
-        "Financial reporting",
-        "Parent communication",
-        "WhatsApp integration",
-        "Automated fee reminders",
-        "Fee payment workflows",
-        "JazzCash fee payments",
-        "Payment confirmation",
-      ],
-      idea: "Give academies and schools one place to manage students, fees and financial operations, while giving parents a simple communication and payment experience through WhatsApp.",
-      flow: ["Students", "Fees", "Financial Management", "WhatsApp", "Parent", "JazzCash", "Payment Confirmation"],
+      title: "Web & SaaS",
+      line: "Platforms, portals and internal systems a business actually runs on.",
     },
     {
-      number: "03",
-      name: "Small Business Cashflow OS",
-      subtitle: "Financial Operating System for Small Businesses",
-      description: "Financial operating system for small businesses.",
-      status: "In development",
-      capabilities: [
-        "Cash flow tracking",
-        "Income tracking",
-        "Expense tracking",
-        "Receivables",
-        "Financial reporting",
-        "Business performance insights",
-        "Centralized financial visibility",
-      ],
-      idea: "Give small businesses a simple financial operating system for understanding where cash is coming from, where it is going, what is outstanding, and how the business is performing.",
-      flow: null as string[] | null,
+      title: "AI Applications",
+      line: "Assistants, agents and document workflows, where the reasoning earns its place.",
+    },
+    {
+      title: "AI Consulting",
+      line: "An honest read on where AI actually helps your business, and where it doesn't.",
+    },
+    {
+      title: "Business Automation",
+      line: "Reporting, reminders and data entry handled by software instead of people.",
+    },
+    {
+      title: "AI Digital Transformation",
+      line: "Move manual, spreadsheet-driven operations onto software built around AI from the start.",
+    },
+    {
+      title: "Mobile Apps",
+      line: "Android and iOS apps for customers, staff and field operations.",
+    },
+    {
+      title: "Custom Business Software",
+      line: "Purpose-built tools that replace the spreadsheet everything currently lives in.",
+    },
+    {
+      title: "API & Systems Integration",
+      line: "Payments, WhatsApp, CRMs and existing systems, connected and kept in sync.",
     },
   ],
 };
 
-export const finalCTA = {
+export const building = {
+  eyebrow: "In progress",
+  headline: "Currently building.",
+  items: [
+    {
+      name: "Nazim",
+      line: "Financial and operations platform for academies and schools.",
+      status: "In development",
+    },
+    {
+      name: "Small Business Cashflow OS",
+      line: "Financial operating system for small businesses.",
+      status: "In development",
+    },
+  ],
+};
+
+export const contact = {
   eyebrow: "Contact",
-  heading: "Have something worth building?",
-  subheading: "Tell me the problem. Let's turn it into software.",
-  inputPlaceholder: "Write the message you would like to send Mubeen on WhatsApp.",
+  headline: "Have something worth building?",
+  lead: "Tell me the problem. Let's turn it into software.",
+  placeholder: "What are you trying to build?",
   submitLabel: "Let's build it.",
-  footerTagline: "Product Owner · AI Product Engineer",
+  tagline: "Product Owner · AI Product Engineer",
 };
 
 export const nav = [
   { label: "Approach", href: "#approach" },
   { label: "Work", href: "#work" },
-  { label: "Process", href: "#process" },
-  { label: "Services", href: "#services" },
-  { label: "Building", href: "#building" },
-  { label: "Contact", href: "#contact" },
+  { label: "Capabilities", href: "#build" },
 ];
