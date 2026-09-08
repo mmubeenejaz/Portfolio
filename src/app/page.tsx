@@ -1,25 +1,29 @@
-import Sidebar from "@/components/Sidebar";
+import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
-import Approach from "@/components/Approach";
-import NisabCase from "@/components/NisabCase";
-import WhatIBuild from "@/components/WhatIBuild";
-import CurrentlyBuilding from "@/components/CurrentlyBuilding";
-import Contact from "@/components/Contact";
+import About from "@/components/About";
+import NisabProduct from "@/components/NisabProduct";
+import Services from "@/components/Services";
+import HowIBuild from "@/components/HowIBuild";
+import ActiveBuilds from "@/components/ActiveBuilds";
+import FinalCTA from "@/components/FinalCTA";
+import WhatsAppFab from "@/components/WhatsAppFab";
 import DevEasterEgg from "@/components/DevEasterEgg";
 
 export default function Home() {
   return (
     <>
       <DevEasterEgg />
-      <Sidebar />
-      <main className="pl-24 lg:pl-[176px]">
+      <Nav />
+      <main>
         <Hero />
-        <Approach />
-        <NisabCase />
-        <CurrentlyBuilding />
-        <WhatIBuild />
-        <Contact />
+        <About />
+        <NisabProduct />
+        <Services />
+        <HowIBuild />
+        <ActiveBuilds />
+        <FinalCTA />
       </main>
+      <WhatsAppFab />
     </>
   );
 }
